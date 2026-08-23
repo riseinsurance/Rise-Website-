@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-brand-blue: #00aeef;
+  --color-brand-blue-dark: #0090c7;
+  --color-brand-charcoal: #2c3e50;
+  --color-near-black: #1e1e1e;
+  --color-light-gray: #f0f0f0;
+  --color-ink: #1a1a1a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-blue: var(--color-brand-blue);
+  --color-brand-blue-dark: var(--color-brand-blue-dark);
+  --color-brand-charcoal: var(--color-brand-charcoal);
+  --color-near-black: var(--color-near-black);
+  --color-light-gray: var(--color-light-gray);
+  --color-ink: var(--color-ink);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* Hand-drawn circle that draws itself in around a highlighted headline
+   word (CircleHighlight component). pathLength=1 on the SVG path lets this
+   stay in the 0–1 range instead of computing real pixel path length. */
+@keyframes draw-circle {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-circle {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-circle 0.5s ease-out 0.3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-draw-circle {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Careers page only — the one deliberate decorative flourish (build brief
+   Section 3.4). White fill with a thick blue stroke; falls back to solid
+   brand-blue text in browsers without text-stroke support. */
+.text-outline-blue {
+  color: #ffffff;
+  -webkit-text-stroke: 2px var(--color-brand-blue);
+}
+
+@supports not (-webkit-text-stroke: 1px black) {
+  .text-outline-blue {
+    color: var(--color-brand-blue);
+  }
 }
