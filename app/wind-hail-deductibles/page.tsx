@@ -4,6 +4,7 @@ import { ComparisonTable } from "@/components/ui/ComparisonTable";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Button } from "@/components/ui/Button";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { TextHighlight } from "@/components/ui/TextHighlight";
 
 export const metadata: Metadata = {
   title: "Wind & Hail Deductible Buyback",
@@ -32,7 +33,7 @@ export default function WindHailDeductiblesPage() {
           </p>
           <h1 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
             Your deductible is a{" "}
-            <em className="font-display italic text-brand-blue">storm</em> waiting to happen.
+            <TextHighlight>storm</TextHighlight> waiting to happen.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/70">
             You can&apos;t stop the storm, but you can control what it costs you. Most West Texas

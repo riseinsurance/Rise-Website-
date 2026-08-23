@@ -13,7 +13,10 @@
       "Bash(lsof -i :3000 -sTCP:LISTEN)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/photos/homepage-hero.jpg)",
       "Bash(curl *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(/bin/ls *)",
+      "Bash(grep -v \"^--$\")"
     ]
   }
 }

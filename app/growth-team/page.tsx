@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CareersInterestForm } from "@/components/forms/CareersInterestForm";
+import { ResumeMockup } from "@/components/growth-team/ResumeMockup";
 import { Photo } from "@/components/ui/Photo";
+import { UnderlineHighlight } from "@/components/ui/UnderlineHighlight";
+import { ScrollHighlight } from "@/components/ui/ScrollHighlight";
+import { CircleHighlight } from "@/components/ui/CircleHighlight";
+import { FitSection } from "@/components/sections/FitSection";
+import { CoreValuesEmbed } from "@/components/sections/CoreValuesEmbed";
+import { HiringProcessSection } from "@/components/sections/HiringProcessSection";
 
 export const metadata: Metadata = {
   title: "Growth Team Member",
@@ -48,6 +55,27 @@ const skills = [
   { title: "Resilience & goal-setting", d: "M12 2l2.5 7.5H22l-6 4.5 2.5 7.5-6.5-4.5-6.5 4.5 2.5-7.5-6-4.5h7.5Z" },
 ];
 
+const takeaways = [
+  "Learn how to handle objections and stay confident under pressure.",
+  "Build real experience holding conversations that matter.",
+  "Understand how sales and business actually work, not just the theory.",
+  "Stand out from other applicants for your next job or internship.",
+];
+
+const fitItems = [
+  "Outgoing and comfortable starting a conversation, phone included.",
+  "Coachable, and genuinely wants to learn the fundamentals of sales.",
+  "Resilient and goal-oriented. A \"no\" doesn't slow you down.",
+  "No prior sales experience required. We'll train you from the ground up.",
+];
+
+const hiringSteps = [
+  "Submit Application",
+  "Phone Interview",
+  "In-Person Interview with Leadership",
+  "Get Hired",
+];
+
 const faqs = [
   {
     q: "Do I need sales experience?",
@@ -85,7 +113,8 @@ export default function GrowthTeamPage() {
                 Sales &middot; Entry Level
               </p>
               <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight drop-shadow-sm sm:text-5xl">
-                Spark conversations. Learn sales. Launch your career.
+                Spark conversations. Learn sales.{" "}
+                <UnderlineHighlight>Launch</UnderlineHighlight> your career.
               </h1>
               <p className="mt-6 text-lg text-white/90">
                 Step into a role where you&apos;ll learn to build relationships, open doors, and
@@ -108,7 +137,7 @@ export default function GrowthTeamPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
           <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            Launch your sales journey here.
+            <ScrollHighlight>Launch your sales journey here.</ScrollHighlight>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
             As our Growth Team Member, you&apos;ll be the spark that starts new relationships —
@@ -142,7 +171,8 @@ export default function GrowthTeamPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
           <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            Build Skills That Set You Apart.
+            Build Skills That{" "}
+            <CircleHighlight strokeColor="#ec4899">Set You Apart</CircleHighlight>.
           </h2>
 
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -156,25 +186,45 @@ export default function GrowthTeamPage() {
             ))}
           </div>
 
-          <p className="mx-auto mt-14 max-w-2xl text-center font-display text-xl italic text-ink/70">
-            &ldquo;Growth Team Member — Generated qualified leads and built foundational sales
-            skills for a growing insurance agency.&rdquo;
-          </p>
         </div>
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            Is This You?
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-ink/70">
-            You&apos;re outgoing, coachable, and not afraid of a phone. You want real experience
-            building a sales career, not busywork. No prior sales experience required — we&apos;ll
-            train you.
-          </p>
+        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+            <div className="min-w-0">
+              <div className="h-1 w-16 bg-sky-500" />
+              <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                What You&apos;ll Walk Away With:
+              </h2>
+              <p className="mt-3 inline-block font-display text-xl font-semibold text-sky-500 underline decoration-2 underline-offset-4">
+                Real, Resume-Worthy Sales Experience
+              </p>
+              <ol className="mt-8 space-y-4">
+                {takeaways.map((t, i) => (
+                  <li key={t} className="flex items-start gap-3">
+                    <span className="font-display text-lg font-bold text-ink">{i + 1}.</span>
+                    <span className="text-lg text-ink/70">{t}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="min-w-0 flex justify-center">
+              <ResumeMockup />
+            </div>
+          </div>
         </div>
       </section>
+
+      <FitSection headline="Is This You?" items={fitItems} accentClassName="text-emerald-500" />
+
+      <CoreValuesEmbed accentClassName="text-orange-500" />
+
+      <HiringProcessSection
+        headline="Our Hiring Process"
+        steps={hiringSteps}
+        accentClassName="bg-pink-500"
+      />
 
       <section className="relative overflow-hidden text-white">
         <div
@@ -203,7 +253,7 @@ export default function GrowthTeamPage() {
           <div className="mt-10">
             <CareersInterestForm
               defaultRole="Growth Team Member"
-              buttonClassName="bg-pink-500 hover:bg-pink-600"
+              buttonClassName="bg-emerald-500 hover:bg-emerald-600"
             />
           </div>
           <p className="mt-6 text-center text-sm text-ink/50">

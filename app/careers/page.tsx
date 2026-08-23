@@ -77,7 +77,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section id="core-values" className="bg-white">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
           <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             Core Values

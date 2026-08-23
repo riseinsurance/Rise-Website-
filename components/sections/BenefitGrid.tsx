@@ -1,0 +1,39 @@
+import type { ReactNode } from "react";
+
+type Benefit = { icon: ReactNode; title: string; description: string };
+
+export function BenefitGrid({
+  eyebrow,
+  headline,
+  items,
+}: {
+  eyebrow: string;
+  headline: string;
+  items: Benefit[];
+}) {
+  return (
+    <section className="bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
+        <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+          {headline}
+        </h2>
+
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {items.map((item) => (
+            <div
+              key={item.title}
+              className="flex flex-col items-center border-2 border-ink/10 bg-white p-8 text-center transition-shadow duration-300 hover:shadow-lg"
+            >
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue">
+                {item.icon}
+              </div>
+              <p className="mt-5 font-display text-lg font-semibold text-ink">{item.title}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink/60">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

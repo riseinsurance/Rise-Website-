@@ -7,6 +7,7 @@ type ProductCard = {
   icon: ReactNode;
   photo: ReactNode;
   href: string;
+  linkLabel?: string;
 };
 
 function ArrowIcon() {
@@ -18,18 +19,20 @@ function ArrowIcon() {
 }
 
 export function ProductCards({
+  id,
   eyebrow,
   headline,
   cards,
   cta,
 }: {
+  id?: string;
   eyebrow: string;
   headline: string;
   cards: ProductCard[];
   cta: { label: string; href: string };
 }) {
   return (
-    <section className="bg-white">
+    <section id={id} className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -66,7 +69,7 @@ export function ProductCards({
                 <p className="font-display text-xl font-semibold text-ink">{card.title}</p>
                 <p className="mt-2 text-ink/60">{card.description}</p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue">
-                  Learn More
+                  {card.linkLabel ?? "Learn More"}
                   <ArrowIcon />
                 </span>
               </div>

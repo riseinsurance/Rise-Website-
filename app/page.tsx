@@ -91,15 +91,15 @@ export default function Home() {
         rows={[
           {
             text: "...called your agent and gotten voicemail, right when you actually needed them?",
-            image: <PhotoPlaceholder label="[Photo]" />,
+            image: <Photo src="/photos/home-problem-voicemail.jpg" alt="A woman on the phone, unable to reach her agent" />,
           },
           {
             text: "...opened a renewal notice and had no idea why your premium jumped again?",
-            image: <PhotoPlaceholder label="[Photo]" />,
+            image: <Photo src="/photos/home-problem-renewal.jpg" alt="A woman reviewing a renewal notice at home" />,
           },
           {
             text: "...filed a claim and felt like you were fighting your own insurance company?",
-            image: <PhotoPlaceholder label="[Photo]" />,
+            image: <Photo src="/photos/home-problem-claim.jpg" alt="Storm damage cleanup and roof repair after a claim" />,
           },
         ]}
         stakeRaiser="You deserve better."

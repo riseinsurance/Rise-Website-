@@ -70,6 +70,31 @@ body {
   }
 }
 
+/* Hand-drawn underline that draws itself in below a highlighted word
+   (UnderlineHighlight component). Same pathLength=1 technique as
+   draw-circle above. */
+@keyframes draw-underline {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-underline {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-underline 0.7s ease-out 0.3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-draw-underline {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Careers page only — the one deliberate decorative flourish (build brief
    Section 3.4). White fill with a thick blue stroke; falls back to solid
    brand-blue text in browsers without text-stroke support. */

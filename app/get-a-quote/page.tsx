@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { TrustSidebar } from "@/components/sections/TrustSidebar";
+import { TextHighlight } from "@/components/ui/TextHighlight";
 
 export const metadata: Metadata = {
   title: "Get a Quote",
@@ -15,7 +16,7 @@ export default function GetAQuotePage() {
         <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">Get a Quote</p>
           <h1 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Let&apos;s find the plan that <em className="italic text-brand-blue">actually</em> fits.
+            Let&apos;s find the plan that <TextHighlight>actually</TextHighlight> fits.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/70">
             Fill this out and a real person from Rise will follow up — no call center, no auto-dialer.

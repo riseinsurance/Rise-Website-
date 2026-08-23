@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
-import { ProblemSection } from "@/components/sections/ProblemSection";
-import { PlanSection } from "@/components/sections/PlanSection";
+import { ComparisonSection } from "@/components/sections/ComparisonSection";
 import { ProductCards } from "@/components/sections/ProductCards";
-import { CoverageGrid } from "@/components/sections/CoverageGrid";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { Photo } from "@/components/ui/Photo";
@@ -13,33 +11,6 @@ export const metadata: Metadata = {
   description:
     "Home, auto, renters, business, and life insurance quotes from a real local team in Lubbock and West Texas — independent access to top carriers, shopped for you.",
 };
-
-function ConversationIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-7 w-7">
-      <path d="M21 12a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.5-5.2A8.5 8.5 0 1 1 21 12Z" />
-    </svg>
-  );
-}
-
-function QuoteIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-7 w-7">
-      <path d="M6 3h9l5 5v13H6V3Z" />
-      <path d="M15 3v5h5" />
-      <path d="M9 13h6M9 17h6" />
-    </svg>
-  );
-}
-
-function ShieldIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-7 w-7">
-      <path d="M12 3 4.5 6v6c0 4.5 3.2 7.4 7.5 9 4.3-1.6 7.5-4.5 7.5-9V6L12 3Z" />
-      <path d="m9 12 2 2 4-4" />
-    </svg>
-  );
-}
 
 function CarIcon() {
   return (
@@ -71,75 +42,62 @@ function BriefcaseIcon() {
   );
 }
 
+function DoorIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+      <rect x="6" y="3" width="12" height="18" rx="1" />
+      <circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function HeartIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+      <path d="M12 20s-7-4.35-9.5-8.5C.5 7.5 3 4 6.5 4c2 0 3.5 1.2 4.5 2.7C12 5.2 13.5 4 15.5 4 19 4 21.5 7.5 20 11.5 18 15.65 12 20 12 20Z" />
+    </svg>
+  );
+}
+
+function UmbrellaIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+      <path d="M12 3a9 9 0 0 1 9 9H3a9 9 0 0 1 9-9Z" />
+      <path d="M12 12v7a2 2 0 0 1-4 0" />
+      <path d="M12 3v1" />
+    </svg>
+  );
+}
+
 export default function InsuranceQuotesPage() {
   return (
     <>
       <Hero
-        eyebrow="Insurance, Actually Explained"
-        headline={
-          <>
-            Coverage that matches
-            <br />
-            what you <em className="font-display italic text-brand-blue">actually</em> own.
-          </>
-        }
-        subhead="Home, auto, renters, business, life — one local team, independent access to top carriers, and a plan built around your specific risk instead of a generic template."
+        eyebrow="Insurance, Explained Straight"
+        headline="Coverage that matches what you own."
+        subhead="Home, auto, renters, business, life. Independent access to top carriers, and a plan built around your specific risk instead of a generic template."
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
-        secondaryCta={{ label: "See Our Promise", href: "/#our-promise" }}
+        secondaryCta={{ label: "See What We Cover", href: "#coverage" }}
         frameForeground={<PhotoPlaceholder label="[Interior hero photo needed]" />}
         background={<PhotoPlaceholder label="[Full-bleed hero background photo needed]" />}
       />
 
-      <ProblemSection
+      <ComparisonSection
         eyebrow="Still Comparing?"
         headline="A cheaper quote isn't always a better one."
-        rows={[
-          {
-            text: "You got a \"quote\" that turned out to be missing half the coverage you actually needed.",
-            image: <PhotoPlaceholder label="[Photo]" />,
-          },
-          {
-            text: "You explained your situation from scratch to three different people at the same agency.",
-            image: <PhotoPlaceholder label="[Photo]" />,
-          },
-          {
-            text: "You're still not sure if a lower price this year means less protection if something happens.",
-            image: <PhotoPlaceholder label="[Photo]" />,
-          },
+        quotes={[
+          "You got a \"quote\" that turned out to be missing half the coverage you needed.",
+          "You explained your situation from scratch to three different people at the same agency.",
+          "You're still not sure if a lower price this year means less protection if something happens.",
         ]}
         stakeRaiser="A real quote should make sense, not just look cheap."
         cta={{ label: "Get a Quote", href: "/get-a-quote" }}
       />
 
-      <PlanSection
-        eyebrow="How It Works"
-        headline="From first call to policy in hand."
-        background={<PhotoPlaceholder label="[Full-bleed background photo needed]" />}
-        steps={[
-          {
-            number: "01",
-            title: "Tell us what matters to you",
-            description: "A real conversation about what you own, what you'd hate to lose, and your budget.",
-            icon: <ConversationIcon />,
-          },
-          {
-            number: "02",
-            title: "We shop it across top carriers",
-            description: "Independent access plus a Farmers captive option, so the plan fits you — not a quota.",
-            icon: <QuoteIcon />,
-          },
-          {
-            number: "03",
-            title: "You get a real point of contact",
-            description: "Renewals, mid-term changes, and claims all go through a person who already knows your policy.",
-            icon: <ShieldIcon />,
-          },
-        ]}
-      />
-
       <ProductCards
+        id="coverage"
         eyebrow="What We Offer"
-        headline="Coverage for the things you're actually trying to protect."
+        headline="Coverage for the things you're trying to protect."
         cta={{ label: "Get a Quote", href: "/get-a-quote" }}
         cards={[
           {
@@ -163,30 +121,35 @@ export default function InsuranceQuotesPage() {
             photo: <Photo src="/photos/card-business.jpg" alt="A local West Texas storefront" />,
             href: "/insurance/business",
           },
-        ]}
-      />
-
-      <CoverageGrid
-        eyebrow="More Ways We Can Help"
-        headline="Coverage that doesn't always get asked about, but should."
-        items={[
           {
             title: "Renters",
             description: "Affordable protection for what you own, even if you don't own the walls around it.",
+            icon: <DoorIcon />,
+            photo: <PhotoPlaceholder label="[Photo]" />,
+            href: "/get-a-quote",
+            linkLabel: "Get a Quote",
           },
           {
             title: "Life",
             description: "Term and permanent options to make sure the people who depend on you are protected.",
+            icon: <HeartIcon />,
+            photo: <PhotoPlaceholder label="[Photo]" />,
+            href: "/get-a-quote",
+            linkLabel: "Get a Quote",
           },
           {
             title: "Umbrella",
             description: "Extra liability protection layered on top of your existing home and auto policies.",
+            icon: <UmbrellaIcon />,
+            photo: <PhotoPlaceholder label="[Photo]" />,
+            href: "/get-a-quote",
+            linkLabel: "Get a Quote",
           },
         ]}
       />
 
       <CtaBanner
-        headline="Ready to see what you're actually paying for?"
+        headline="Ready to see what you're paying for?"
         subhead="A free, no-pressure quote — we'll tell you plainly if we can beat what you have."
         cta={{ label: "Get a Quote", href: "/get-a-quote" }}
       />
