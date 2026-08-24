@@ -14,7 +14,7 @@ export default function CoreValuesPage() {
   return (
     <>
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:px-8">
+        <div className="mx-auto max-w-4xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
           <h1 className={`${caveat.className} text-6xl text-brand-blue sm:text-7xl`}>
             Our Core Values
           </h1>

@@ -10,7 +10,7 @@ const caveat = Caveat({ subsets: ["latin"], weight: "600" });
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join the Rise Insurance Agency team in Lubbock, TX — a values-based team building something that matters, not just hiring for a desk.",
+    "Join the Rise Insurance Agency team — a values-based team building something that matters, not just hiring for a desk.",
 };
 
 export default function CareersPage() {
@@ -27,29 +27,21 @@ export default function CareersPage() {
           <div className="absolute inset-0 bg-near-black/60" />
         </div>
 
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center lg:px-8">
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-20 text-center sm:py-32 lg:px-8">
           <p className={`${caveat.className} text-4xl text-brand-blue sm:text-5xl`}>
             we get excited
           </p>
           <h1 className="text-outline-blue mt-2 font-display text-5xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-7xl">
             About Being At Work.
           </h1>
-          <p className="mt-8 text-lg text-white/70">
-            We&apos;re not just hiring — we&apos;re building something that matters.
+          <p className="mt-8 text-xl font-semibold text-white">
+            We&apos;re not just hiring. We&apos;re building something that matters.
           </p>
-          <p className="mt-4 text-lg text-white/70">
-            At Rise Insurance Agency in Lubbock, we&apos;re a team on a mission: to help people
-            make wise decisions, protect what matters most, and build a future they can feel
-            confident in.
-          </p>
-          <p className="mt-4 text-lg text-white/70">
-            We&apos;re looking for driven, others-focused people who want more than just a job —
-            people who care deeply, work hard, and want to grow both personally and
-            professionally.
-          </p>
-          <p className="mt-4 text-lg text-white/70">
-            If you&apos;re ready to be part of a values-based team that believes in family,
-            faith, and doing the right thing, you just might belong here.
+          <div className="mt-6 h-px w-16 bg-brand-blue/50" />
+          <p className="mt-6 text-lg text-white/70">
+            We&apos;re a mission-driven team looking for people who care deeply, work hard, and
+            want more than just a job. If you believe in family, faith, and doing the right
+            thing, you just might belong here.
           </p>
           <Link
             href="/available-positions"
@@ -61,8 +53,8 @@ export default function CareersPage() {
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
-          <h2 className="font-display text-3xl font-semibold italic tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
+          <h2 className="font-display text-5xl font-semibold italic tracking-tight text-ink">
             Work That Matters
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
@@ -78,8 +70,8 @@ export default function CareersPage() {
       </section>
 
       <section id="core-values" className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
             Core Values
           </h2>
           <div className="mx-auto mt-3 h-1 w-16 bg-brand-blue" />
@@ -103,13 +95,13 @@ export default function CareersPage() {
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
             <div>
               <span className="inline-block bg-brand-blue px-4 py-1.5 text-sm font-bold text-white">
                 Benefits
               </span>
-              <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+              <h2 className="mt-4 font-display text-5xl font-semibold tracking-tight text-ink">
                 How We Care About Our People
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-ink/70">
@@ -140,11 +132,11 @@ export default function CareersPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
           <span className="inline-block bg-brand-blue px-4 py-1.5 text-sm font-bold text-white">
             Culture
           </span>
-          <h2 className="mt-4 font-display text-3xl font-semibold italic tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-4 font-display text-5xl font-semibold italic tracking-tight text-ink">
             Life At Rise Insurance Agency
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
@@ -158,8 +150,8 @@ export default function CareersPage() {
       </section>
 
       <section className="bg-brand-charcoal">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 py-20 text-center lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
+          <h2 className="font-display text-5xl font-semibold tracking-tight text-white">
             Ready to join the mission?
           </h2>
           <Link

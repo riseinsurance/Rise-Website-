@@ -16,7 +16,30 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(/bin/ls *)",
-      "Bash(grep -v \"^--$\")"
+      "Bash(grep -v \"^--$\")",
+      "Bash(kill 15988)",
+      "Bash(pkill -f \"next dev\")",
+      "WebSearch",
+      "WebFetch(domain:support.agencyzoom.com)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(git check-ignore *)",
+      "Bash(npm install *)",
+      "Bash(kill 34115)",
+      "Bash(vercel whoami *)",
+      "Bash(vercel login *)",
+      "Bash(vercel link *)",
+      "Bash(vercel env *)",
+      "Bash(vercel deploy *)",
+      "Bash(vercel logs *)",
+      "Bash(awk '{print $2}')",
+      "Bash(xargs -I{} kill {})",
+      "Bash(which ffprobe *)",
+      "Bash(xxd \"/Users/bradenowen/Desktop/Hail Deductible Cover Video.mp4\")",
+      "Bash(pip3 list *)",
+      "Bash(xxd /tmp/wind-hail-hero-faststart.mp4)",
+      "Bash(gh auth *)",
+      "Bash(git remote *)",
+      "Bash(git fetch *)"
     ]
   }
 }

@@ -9,7 +9,7 @@ import { Photo } from "@/components/ui/Photo";
 export const metadata: Metadata = {
   title: "Auto Insurance",
   description:
-    "Auto insurance in Lubbock and West Texas, shopped across multiple carriers and read line by line before you sign. Not just the first quote.",
+    "Auto insurance shopped across multiple carriers and read line by line before you sign. Not just the first quote.",
 };
 
 export default function AutoInsurancePage() {
@@ -21,7 +21,7 @@ export default function AutoInsurancePage() {
         subhead="We read every line of your auto policy before you sign it. Most drivers don't find the gap in their coverage, they find it in the middle of a police report."
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "See What's Covered", href: "#covered" }}
-        frameForeground={<Photo src="/photos/card-auto.jpg" alt="West Texas highway" />}
+        frameForeground={<Photo src="/photos/card-auto.jpg" alt="A highway" />}
       />
 
       <CoverageList

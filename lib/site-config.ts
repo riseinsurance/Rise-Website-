@@ -22,14 +22,15 @@ export const nav = [
 export const siteConfig = {
   name: "Rise Insurance Agency",
   domain: "riseinsuranceagency.com",
-  phone: NEEDS_FROM_BRADEN as MaybeContent,
-  phoneHref: NEEDS_FROM_BRADEN as MaybeContent, // e.g. "tel:+18065550100"
-  email: NEEDS_FROM_BRADEN as MaybeContent,
-  address: {
-    line1: NEEDS_FROM_BRADEN as MaybeContent,
-    cityStateZip: NEEDS_FROM_BRADEN as MaybeContent, // e.g. "Lubbock, TX 79401"
-  },
-  hours: NEEDS_FROM_BRADEN as MaybeContent, // e.g. "Mon–Fri, 8:30am–5:00pm"
+  phone: "806-605-0080" as MaybeContent,
+  phoneHref: "tel:+18066050080" as MaybeContent,
+  email: "service@riseinsuranceagency.com" as MaybeContent,
+  // Rise operates as a cloud-based agency — no physical office. This is a
+  // confirmed fact, not a content gap, so it's handled separately from the
+  // NEEDS_FROM_BRADEN placeholder pattern below.
+  isCloudBased: true,
+  address: null as { line1: string; cityStateZip: string } | null,
+  hours: "Mon–Fri, 9:00am–5:00pm" as MaybeContent,
   googleReviewUrl: null as string | null, // confirm review link/count exists for Rise
   social: {
     facebook: null as string | null,

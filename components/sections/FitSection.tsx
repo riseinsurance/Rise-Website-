@@ -22,8 +22,8 @@ export function FitSection({
 }) {
   return (
     <section className="bg-near-black text-white">
-      <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-        <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">{headline}</h2>
+      <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+        <h2 className="font-display text-5xl font-semibold tracking-tight">{headline}</h2>
         <ul className="mt-10 space-y-5">
           {items.map((item) => (
             <li key={item} className="flex items-start gap-4">

@@ -4,7 +4,7 @@ import { JobOpeningCard } from "@/components/careers/JobOpeningCard";
 
 export const metadata: Metadata = {
   title: "Available Positions",
-  description: "Current job openings at Rise Insurance Agency in Lubbock, TX.",
+  description: "Current job openings at Rise Insurance Agency.",
 };
 
 function HeadsetIcon() {
@@ -31,15 +31,15 @@ export default function AvailablePositionsPage() {
   return (
     <>
       <section className="bg-brand-blue">
-        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
-          <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
+        <div className="mx-auto max-w-5xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h1 className="font-display text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
             Rise Insurance Agency Job Openings
           </h1>
         </div>
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">Sales</p>
           <div className="mt-3 h-1 w-16 bg-brand-blue" />
 
@@ -61,8 +61,8 @@ export default function AvailablePositionsPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="font-display text-5xl font-semibold tracking-tight text-ink">
             Don&apos;t see the right fit?
           </h2>
           <p className="mt-6 text-lg text-ink/70">

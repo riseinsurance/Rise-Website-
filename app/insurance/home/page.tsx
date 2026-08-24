@@ -10,7 +10,7 @@ import { Photo } from "@/components/ui/Photo";
 export const metadata: Metadata = {
   title: "Home Insurance",
   description:
-    "Homeowners insurance in Lubbock and West Texas, reviewed line by line before you need it, not after. Independent access to top carriers.",
+    "Homeowners insurance reviewed line by line before you need it, not after. Independent access to top carriers.",
 };
 
 export default function HomeInsurancePage() {
@@ -22,7 +22,7 @@ export default function HomeInsurancePage() {
         subhead="We go through your homeowners policy before you need it, not after. The biggest thing you own shouldn't be protected by a document you never read past page two."
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "See What's Covered", href: "#covered" }}
-        frameForeground={<Photo src="/photos/card-home.jpg" alt="A West Texas home" focusX={70} />}
+        frameForeground={<Photo src="/photos/card-home.jpg" alt="A home" focusX={70} />}
       />
 
       <CoverageList
@@ -57,8 +57,8 @@ export default function HomeInsurancePage() {
       />
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
-          <h2 className="font-display text-3xl font-semibold leading-snug tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-4xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="font-display text-5xl font-semibold leading-snug tracking-tight text-ink">
             Replacement cost and actual cash value are not the same number.
           </h2>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
@@ -90,8 +90,6 @@ export default function HomeInsurancePage() {
           </div>
           <p className="mt-6 text-xs italic text-ink/40">
             Figures in this table are illustrative, meant to explain the concept, not a quote.
-            [NEEDS FROM BRADEN: do not publish specific dollar examples without underwriting
-            confirmation.]
           </p>
         </div>
       </section>

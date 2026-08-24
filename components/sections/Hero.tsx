@@ -36,8 +36,8 @@ export function Hero({
         </div>
       )}
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-24 sm:py-32 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8">
-        <div>
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-6 py-10 sm:gap-10 sm:py-32 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8 lg:py-24">
+        <div className="order-2 lg:order-1">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
           <h1 className="mt-5 font-display text-6xl font-bold leading-[1.03] tracking-tight sm:text-7xl">
             {headline}
@@ -55,7 +55,10 @@ export function Hero({
           </div>
         </div>
 
-        <OffsetFrame className="aspect-[4/3] w-full lg:-mr-6" foreground={frameForeground} />
+        <OffsetFrame
+          className="order-1 aspect-[16/9] w-full sm:aspect-[4/3] lg:order-2 lg:-mr-6"
+          foreground={frameForeground}
+        />
       </div>
 
       {showCarrierMarquee && <LogoMarquee logos={carrierLogos} className="relative" />}

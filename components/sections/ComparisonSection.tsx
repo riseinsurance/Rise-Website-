@@ -20,9 +20,9 @@ export function ComparisonSection({
 }) {
   return (
     <section className="bg-light-gray">
-      <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+      <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
-        <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+        <h2 className="mt-4 max-w-2xl font-display text-5xl font-semibold leading-tight tracking-tight text-ink sm:text-6xl">
           {headline}
         </h2>
 

@@ -12,11 +12,18 @@ type PlanSectionProps = {
   headline: string;
   steps: Step[];
   background: ReactNode;
+  headlineSize?: string;
 };
 
 const stagger = ["lg:translate-y-0", "lg:translate-y-10", "lg:translate-y-0"];
 
-export function PlanSection({ eyebrow, headline, steps, background }: PlanSectionProps) {
+export function PlanSection({
+  eyebrow,
+  headline,
+  steps,
+  background,
+  headlineSize = "text-5xl sm:text-6xl",
+}: PlanSectionProps) {
   return (
     <section className="relative overflow-hidden bg-near-black text-white">
       <div className="absolute inset-0">
@@ -24,9 +31,9 @@ export function PlanSection({ eyebrow, headline, steps, background }: PlanSectio
         <div className="absolute inset-0 bg-near-black/80" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
-        <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+        <h2 className={`mt-4 max-w-2xl font-display font-semibold leading-tight tracking-tight ${headlineSize}`}>
           {headline}
         </h2>
 

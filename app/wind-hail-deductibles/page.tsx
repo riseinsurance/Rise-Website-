@@ -1,37 +1,29 @@
 import type { Metadata } from "next";
-import { NeedsConfirmationBanner } from "@/components/ui/NeedsConfirmationBanner";
 import { ComparisonTable } from "@/components/ui/ComparisonTable";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Button } from "@/components/ui/Button";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { VideoBackground } from "@/components/ui/VideoBackground";
 import { TextHighlight } from "@/components/ui/TextHighlight";
 
 export const metadata: Metadata = {
   title: "Wind & Hail Deductible Buyback",
   description:
-    "Understand your wind & hail deductible and whether a buyback endorsement can lower your out-of-pocket cost after a West Texas hailstorm.",
+    "Understand your wind & hail deductible and how a buyback policy can lower your out-of-pocket cost, as low as $0, after a West Texas hailstorm.",
 };
 
 export default function WindHailDeductiblesPage() {
   return (
     <>
-      <NeedsConfirmationBanner>
-        DRAFT PAGE — Rise has not yet confirmed it offers a wind &amp; hail deductible buyback
-        endorsement. Build brief Section 6 recommends reusing Owen&apos;s proven offer, but this
-        is a real insurance product claim and needs Braden&apos;s confirmation before this page
-        goes live. All specific figures below are illustrative placeholders, not real quotes.
-      </NeedsConfirmationBanner>
-
       <section className="relative overflow-hidden bg-near-black text-white">
         <div className="absolute inset-0">
-          <PhotoPlaceholder label="[Full-bleed storm/roof damage photo needed]" />
+          <VideoBackground src="/videos/wind-hail-hero.mp4" />
           <div className="absolute inset-0 bg-near-black/70" />
         </div>
-        <div className="relative mx-auto max-w-4xl px-6 py-24 text-center lg:px-8">
+        <div className="relative mx-auto max-w-4xl px-6 py-16 sm:py-20 lg:py-24 text-center lg:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">
             West Texas Hail Risk
           </p>
-          <h1 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+          <h1 className="mt-4 font-display text-5xl font-bold leading-tight tracking-tight sm:text-6xl">
             Your deductible is a{" "}
             <TextHighlight>storm</TextHighlight> waiting to happen.
           </h1>
@@ -49,8 +41,8 @@ export default function WindHailDeductiblesPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="font-display text-5xl font-semibold tracking-tight text-ink">
             What is a wind &amp; hail deductible?
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
@@ -61,31 +53,33 @@ export default function WindHailDeductiblesPage() {
             $6,000 of storm damage comes out of your pocket before coverage kicks in.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-ink/70">
-            A wind &amp; hail deductible buyback endorsement lets you convert that
-            percentage-based deductible back to a flat dollar amount — so you know exactly what
-            you&apos;d owe before a storm ever hits, not after.
+            A wind &amp; hail deductible buyback is a separate policy you can purchase to lower
+            that percentage-based deductible. Rise offers access to buyback coverage that can
+            bring your wind &amp; hail deductible down to as low as $0, so you know exactly what
+            you&apos;d owe before a storm hits, not after.
           </p>
         </div>
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink">
+        <div className="mx-auto max-w-4xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="font-display text-5xl font-semibold tracking-tight text-ink">
             An illustrative example
           </h2>
           <p className="mt-4 text-ink/60">
-            Figures below illustrate how a percentage deductible works on a $300,000 home. They
-            are not a quote — actual figures depend on your policy and carrier, and Rise&apos;s
-            specific buyback product terms are still pending confirmation (see banner above).
+            Figures below illustrate how a percentage deductible works on a $300,000 home, and
+            what buying that deductible down can look like. They are not a quote. Actual pricing
+            and the deductible level you can buy down to depend on your home, your carrier, and
+            the buyback policy you choose.
           </p>
           <div className="mt-10">
             <ComparisonTable
               beforeLabel="Standard Percentage Deductible"
               afterLabel="With Buyback (illustrative)"
               rows={[
-                { label: "Deductible Type", before: "Percentage-based", after: "[NEEDS FROM BRADEN]" },
-                { label: "Deductible Rate", before: "2% of Coverage A", after: "[NEEDS FROM BRADEN]" },
-                { label: "On a $300,000 Home", before: "$6,000 out of pocket", after: "[NEEDS FROM BRADEN]" },
+                { label: "Deductible Type", before: "Percentage-based", after: "Flat dollar amount, chosen by you" },
+                { label: "Deductible Rate", before: "2% of Coverage A", after: "Set by the buyback policy you choose" },
+                { label: "On a $300,000 Home", before: "$6,000 out of pocket", after: "As low as $0 out of pocket" },
               ]}
             />
           </div>

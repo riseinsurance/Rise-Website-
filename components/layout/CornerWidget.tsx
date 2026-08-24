@@ -12,10 +12,10 @@ export function CornerWidget() {
 
   const hasPhone = siteConfig.phone !== NEEDS_FROM_BRADEN;
   const hasEmail = siteConfig.email !== NEEDS_FROM_BRADEN;
-  const hasAddress = siteConfig.address.line1 !== NEEDS_FROM_BRADEN;
+  const hasAddress = siteConfig.address !== null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 w-[calc(100vw-2rem)] max-w-72 border-2 border-near-black bg-white shadow-xl sm:bottom-6 sm:right-6">
+    <div className="fixed bottom-6 right-6 z-50 hidden w-72 border-2 border-near-black bg-white shadow-xl sm:block">
       <button
         type="button"
         onClick={() => setDismissed(true)}
@@ -56,8 +56,10 @@ export function CornerWidget() {
           ) : (
             <span className="text-ink/30">Email [TBD]</span>
           )}
-          {hasAddress ? (
-            <span>{siteConfig.address.cityStateZip}</span>
+          {siteConfig.isCloudBased ? (
+            <span>Cloud-Based Agency</span>
+          ) : hasAddress ? (
+            <span>{siteConfig.address!.cityStateZip}</span>
           ) : (
             <span className="text-ink/30">Location [TBD]</span>
           )}

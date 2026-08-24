@@ -108,3 +108,15 @@ body {
     color: var(--color-brand-blue);
   }
 }
+
+/* Swipeable card rows on mobile (homepage's "Have you ever" and
+   ProductCards) — native touch scroll + scroll-snap, no JS carousel
+   needed. Hides the scrollbar since swiping is the intended interaction. */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

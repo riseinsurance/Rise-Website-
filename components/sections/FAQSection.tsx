@@ -13,9 +13,9 @@ export function FAQSection({
 }) {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
+      <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
-        <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <h2 className="mt-4 font-display text-5xl font-semibold tracking-tight text-ink">
           {headline}
         </h2>
         <div className="mt-10 space-y-8">

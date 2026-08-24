@@ -9,7 +9,7 @@ import { Photo } from "@/components/ui/Photo";
 export const metadata: Metadata = {
   title: "Business Insurance",
   description:
-    "Business insurance in Lubbock and West Texas, built around what your business actually does. General liability, property, and business-specific coverage.",
+    "Business insurance built around what your business actually does. General liability, property, and business-specific coverage.",
 };
 
 export default function BusinessInsurancePage() {
@@ -21,7 +21,7 @@ export default function BusinessInsurancePage() {
         subhead="We build coverage around what your business actually does. Most owners don't find the gap between their policy and their business until a claim finds it for them."
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "See What's Covered", href: "#covered" }}
-        frameForeground={<Photo src="/photos/card-business.jpg" alt="A local West Texas storefront" />}
+        frameForeground={<Photo src="/photos/card-business.jpg" alt="A local storefront" />}
       />
 
       <CoverageList

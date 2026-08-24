@@ -24,7 +24,7 @@ export function Footer() {
               <Logo variant="white" height={26} />
             </Link>
             <p className="mt-4 text-sm text-white/60">
-              Independent insurance, local to Lubbock and West Texas.
+              Independent insurance for Texas families and businesses.
             </p>
           </div>
 
@@ -68,7 +68,9 @@ export function Footer() {
                 )}
               </li>
               <li>
-                {siteConfig.address.line1 !== NEEDS_FROM_BRADEN ? (
+                {siteConfig.isCloudBased ? (
+                  "Cloud-Based Agency"
+                ) : siteConfig.address ? (
                   <>
                     {siteConfig.address.line1}
                     <br />

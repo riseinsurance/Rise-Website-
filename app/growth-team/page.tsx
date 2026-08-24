@@ -12,7 +12,7 @@ import { HiringProcessSection } from "@/components/sections/HiringProcessSection
 
 export const metadata: Metadata = {
   title: "Growth Team Member",
-  description: "Join Rise Insurance Agency's Growth Team in Lubbock, TX — spark conversations, learn sales, and launch your career.",
+  description: "Join Rise Insurance Agency's Growth Team — spark conversations, learn sales, and launch your career.",
 };
 
 // This page intentionally breaks from the site's blue/near-black palette —
@@ -108,11 +108,11 @@ export default function GrowthTeamPage() {
                   "linear-gradient(135deg, #ec4899 0%, #f97316 33%, #10b981 66%, #0ea5e9 100%)",
               }}
             />
-            <div className="relative flex h-full flex-col justify-center px-6 py-20 sm:px-12 lg:px-16">
+            <div className="relative flex h-full flex-col justify-center px-6 py-14 sm:px-12 sm:py-20 lg:px-16">
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/90">
                 Sales &middot; Entry Level
               </p>
-              <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight drop-shadow-sm sm:text-5xl">
+              <h1 className="mt-4 font-display text-5xl font-bold leading-[1.1] tracking-tight drop-shadow-sm sm:text-6xl">
                 Spark conversations. Learn sales.{" "}
                 <UnderlineHighlight>Launch</UnderlineHighlight> your career.
               </h1>
@@ -135,8 +135,8 @@ export default function GrowthTeamPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
+          <h2 className="font-display text-5xl font-semibold tracking-tight text-ink">
             <ScrollHighlight>Launch your sales journey here.</ScrollHighlight>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
@@ -149,11 +149,11 @@ export default function GrowthTeamPage() {
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
           <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-pink-500">
             What You&apos;ll Do
           </p>
-          <h2 className="mt-4 text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-4 text-center font-display text-5xl font-semibold tracking-tight text-ink">
             Your Impact Matters.
           </h2>
 
@@ -169,8 +169,8 @@ export default function GrowthTeamPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
             Build Skills That{" "}
             <CircleHighlight strokeColor="#ec4899">Set You Apart</CircleHighlight>.
           </h2>
@@ -190,11 +190,11 @@ export default function GrowthTeamPage() {
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
             <div className="min-w-0">
               <div className="h-1 w-16 bg-sky-500" />
-              <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              <h2 className="mt-6 font-display text-5xl font-bold tracking-tight text-ink">
                 What You&apos;ll Walk Away With:
               </h2>
               <p className="mt-3 inline-block font-display text-xl font-semibold text-sky-500 underline decoration-2 underline-offset-4">
@@ -231,8 +231,8 @@ export default function GrowthTeamPage() {
           className="absolute inset-0"
           style={{ background: "linear-gradient(115deg, #0ea5e9 0%, #10b981 50%, #ec4899 100%)" }}
         />
-        <div className="relative mx-auto max-w-3xl px-6 py-20 lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+        <div className="relative mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="font-display text-5xl font-semibold tracking-tight">
             Your Questions, Answered.
           </h2>
           <div className="mt-10 space-y-6">
@@ -246,8 +246,8 @@ export default function GrowthTeamPage() {
       </section>
 
       <section id="apply" className="bg-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
             Don&apos;t just find a job. Build a career story.
           </h2>
           <div className="mt-10">

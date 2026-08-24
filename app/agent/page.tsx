@@ -8,7 +8,7 @@ import { HiringProcessSection } from "@/components/sections/HiringProcessSection
 
 export const metadata: Metadata = {
   title: "Insurance Sales Agent",
-  description: "Join Rise Insurance Agency as a Sales Agent in Lubbock, TX — build real client relationships and a business of your own.",
+  description: "Join Rise Insurance Agency as a Sales Agent — build real client relationships and a business of your own.",
 };
 
 function skillIcon(d: string) {
@@ -100,16 +100,17 @@ const careerStages = [
     icon: <LaunchIcon />,
   },
   {
-    year: "Years 2-3",
+    year: "Years 2-4",
     label: "Build",
     description:
       "Grow your own book of business and deepen client relationships. Commissions scale with you. There's no cap on what your effort can build.",
     icon: <BuildIcon />,
   },
   {
-    year: "Year 4+",
+    year: "Year 5+",
     label: "Legacy",
-    description: "Your book of business is a real asset you own. Keep building it, or step into leadership.",
+    description:
+      "After five years with the agency, you're eligible to be offered an ownership contract. What you've built becomes a real stake, not just a paycheck.",
     icon: <LegacyIcon />,
   },
 ];
@@ -153,11 +154,11 @@ export default function AgentPage() {
     <>
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch lg:grid-cols-2">
-          <div className="flex flex-col justify-center bg-near-black px-6 py-20 text-white sm:px-12 lg:px-16">
+          <div className="flex flex-col justify-center bg-near-black px-6 py-14 text-white sm:px-12 sm:py-20 lg:px-16">
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">
               Sales &middot; Licensed Agent
             </p>
-            <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+            <h1 className="mt-4 font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl">
               Earn trust. Change lives. Build a business of your own.
             </h1>
             <p className="mt-6 text-lg text-white/70">
@@ -178,8 +179,8 @@ export default function AgentPage() {
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
+          <h2 className="font-display text-5xl font-semibold tracking-tight text-ink">
             Launch your agent career here.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
@@ -192,11 +193,11 @@ export default function AgentPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
           <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">
             What You&apos;ll Do
           </p>
-          <h2 className="mt-4 text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-4 text-center font-display text-5xl font-semibold tracking-tight text-ink">
             Your Impact Matters.
           </h2>
 
@@ -212,8 +213,8 @@ export default function AgentPage() {
       </section>
 
       <section className="bg-near-black text-white">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="text-center font-display text-5xl font-semibold tracking-tight">
             Build Skills That Set You Apart.
           </h2>
 
@@ -227,15 +228,15 @@ export default function AgentPage() {
           </div>
 
           <p className="mx-auto mt-14 max-w-2xl text-center font-display text-xl italic text-white/80">
-            &ldquo;Sales Agent — Built and managed a book of insurance clients for an independent
-            West Texas agency.&rdquo;
+            &ldquo;Sales Agent, built and managed a book of insurance clients for an independent
+            agency.&rdquo;
           </p>
         </div>
       </section>
 
       <section className="bg-light-gray">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
             Why Rise Insurance Agency
           </h2>
 
@@ -252,11 +253,11 @@ export default function AgentPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
           <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">
             Where This Goes
           </p>
-          <h2 className="mt-4 text-center font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+          <h2 className="mt-4 text-center font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl">
             What Success Looks Like
           </h2>
 
@@ -278,11 +279,6 @@ export default function AgentPage() {
               </div>
             ))}
           </div>
-
-          <p className="mx-auto mt-16 max-w-2xl text-center text-xs italic text-ink/40">
-            [NEEDS FROM BRADEN: confirm this description of how commissions and book ownership
-            actually grow year over year before this goes live.]
-          </p>
         </div>
       </section>
 
@@ -298,8 +294,8 @@ export default function AgentPage() {
       />
 
       <section className="bg-brand-blue text-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="font-display text-5xl font-semibold tracking-tight">
             Your Questions, Answered.
           </h2>
           <div className="mt-10 space-y-6">
@@ -313,8 +309,8 @@ export default function AgentPage() {
       </section>
 
       <section id="apply" className="bg-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
             Don&apos;t just find a job. Build a career story.
           </h2>
           <div className="mt-10">

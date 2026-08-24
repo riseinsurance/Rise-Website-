@@ -24,20 +24,22 @@ export function ProductCards({
   headline,
   cards,
   cta,
+  headlineSize = "text-5xl sm:text-6xl",
 }: {
   id?: string;
   eyebrow: string;
   headline: string;
   cards: ProductCard[];
   cta: { label: string; href: string };
+  headlineSize?: string;
 }) {
   return (
     <section id={id} className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
-            <h2 className="mt-4 max-w-xl font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+            <h2 className={`mt-4 max-w-xl font-display font-semibold leading-tight tracking-tight text-ink ${headlineSize}`}>
               {headline}
             </h2>
           </div>
@@ -50,12 +52,12 @@ export function ProductCards({
           </Link>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="scrollbar-hide -mx-6 mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0">
           {cards.map((card) => (
             <Link
               key={card.title}
               href={card.href}
-              className="group block border-2 border-ink/10 bg-white transition-all duration-300 ease-out hover:-translate-y-2 hover:border-brand-blue hover:shadow-xl"
+              className="group block w-[78%] shrink-0 snap-center border-2 border-ink/10 bg-white transition-all duration-300 ease-out hover:-translate-y-2 hover:border-brand-blue hover:shadow-xl sm:w-auto sm:shrink"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-brand-charcoal">
                 <div className="h-full w-full transition-transform duration-300 ease-out group-hover:scale-110">
@@ -76,6 +78,7 @@ export function ProductCards({
             </Link>
           ))}
         </div>
+        <p className="mt-3 text-xs text-ink/40 sm:hidden">Swipe to see more &rarr;</p>
       </div>
     </section>
   );

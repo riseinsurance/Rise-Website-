@@ -1,5 +1,4 @@
 import { Hero } from "@/components/sections/Hero";
-import { ProblemSection } from "@/components/sections/ProblemSection";
 import { ProductCards } from "@/components/sections/ProductCards";
 import { GuideSection } from "@/components/sections/GuideSection";
 import { PlanSection } from "@/components/sections/PlanSection";
@@ -8,6 +7,25 @@ import { OfferSection } from "@/components/sections/OfferSection";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { Photo } from "@/components/ui/Photo";
 import { CircleHighlight } from "@/components/ui/CircleHighlight";
+import { Button } from "@/components/ui/Button";
+
+const problems = [
+  {
+    text: "...called your agent and gotten voicemail, right when you actually needed them?",
+    photo: "/photos/home-problem-voicemail.jpg",
+    alt: "A woman on the phone, unable to reach her agent",
+  },
+  {
+    text: "...opened a renewal notice and had no idea why your premium jumped again?",
+    photo: "/photos/home-problem-renewal.jpg",
+    alt: "A woman reviewing a renewal notice at home",
+  },
+  {
+    text: "...filed a claim and felt like you were fighting your own insurance company?",
+    photo: "/photos/home-problem-claim.jpg",
+    alt: "Storm damage cleanup and roof repair after a claim",
+  },
+];
 
 function CarIcon() {
   return (
@@ -70,7 +88,7 @@ export default function Home() {
   return (
     <>
       <Hero
-        eyebrow="Lubbock & West Texas"
+        eyebrow="Independent Insurance Agency"
         headline={
           <>
             Insurance made
@@ -85,51 +103,65 @@ export default function Home() {
         showCarrierMarquee
       />
 
-      <ProblemSection
-        eyebrow="Sound familiar?"
-        headline="Have you ever..."
-        rows={[
-          {
-            text: "...called your agent and gotten voicemail, right when you actually needed them?",
-            image: <Photo src="/photos/home-problem-voicemail.jpg" alt="A woman on the phone, unable to reach her agent" />,
-          },
-          {
-            text: "...opened a renewal notice and had no idea why your premium jumped again?",
-            image: <Photo src="/photos/home-problem-renewal.jpg" alt="A woman reviewing a renewal notice at home" />,
-          },
-          {
-            text: "...filed a claim and felt like you were fighting your own insurance company?",
-            image: <Photo src="/photos/home-problem-claim.jpg" alt="Storm damage cleanup and roof repair after a claim" />,
-          },
-        ]}
-        stakeRaiser="You deserve better."
-        cta={{ label: "Get a Quote", href: "/get-a-quote" }}
-      />
+      <section className="bg-light-gray">
+        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">
+            Sound familiar?
+          </p>
+          <h2 className="mt-4 max-w-2xl font-display text-5xl font-semibold leading-tight tracking-tight text-ink sm:text-6xl">
+            Have you ever...
+          </h2>
+
+          <div className="scrollbar-hide -mx-6 mt-14 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0">
+            {problems.map((p) => (
+              <div
+                key={p.photo}
+                className="relative aspect-[3/4] w-[78%] shrink-0 snap-center overflow-hidden bg-brand-charcoal sm:w-auto sm:shrink"
+              >
+                <Photo src={p.photo} alt={p.alt} />
+                <div className="absolute inset-0 bg-gradient-to-t from-near-black/95 via-near-black/40 to-transparent" />
+                <p className="absolute inset-x-0 bottom-0 p-6 font-display text-xl font-medium italic leading-snug text-white">
+                  {p.text}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-ink/40 sm:hidden">Swipe to see more &rarr;</p>
+
+          <div className="mt-6 flex flex-col items-start gap-6 bg-near-black px-8 py-10 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-display text-2xl font-semibold text-white">You deserve better.</p>
+            <Button href="/get-a-quote" variant="primary">
+              Get a Quote
+            </Button>
+          </div>
+        </div>
+      </section>
 
       <ProductCards
         eyebrow="What We Offer"
         headline="Coverage for the things you're actually trying to protect."
+        headlineSize="text-5xl sm:text-6xl"
         cta={{ label: "See All Coverage", href: "/insurance-quotes" }}
         cards={[
           {
             title: "Auto",
             description: "Liability, collision, and comprehensive coverage shopped across multiple carriers — not just the first quote.",
             icon: <CarIcon />,
-            photo: <Photo src="/photos/card-auto.jpg" alt="West Texas highway" />,
+            photo: <Photo src="/photos/card-auto.jpg" alt="A highway" />,
             href: "/insurance/auto",
           },
           {
             title: "Home",
             description: "Homeowners, condo, and landlord coverage built around what your property is actually worth.",
             icon: <HouseIcon />,
-            photo: <Photo src="/photos/card-home.jpg" alt="A West Texas home" focusX={70} />,
+            photo: <Photo src="/photos/card-home.jpg" alt="A home" focusX={70} />,
             href: "/insurance/home",
           },
           {
             title: "Business",
-            description: "General liability, property, and business-specific policies for West Texas small businesses.",
+            description: "General liability, property, and business-specific policies for small businesses.",
             icon: <BriefcaseIcon />,
-            photo: <Photo src="/photos/card-business.jpg" alt="A local West Texas storefront" />,
+            photo: <Photo src="/photos/card-business.jpg" alt="A local storefront" />,
             href: "/insurance/business",
           },
         ]}
@@ -138,7 +170,7 @@ export default function Home() {
       <GuideSection
         eyebrow="Our Promise"
         empathy="We get it. You've either been burned by an agent who went silent right when you needed them, or you've never had anyone actually explain what you're paying for."
-        authority="Rise gives you independent access to multiple top carriers plus a Farmers captive option, so the plan fits you — not the other way around. We're a local West Texas team with direct points of contact, not a call center, and fast turnaround on quotes."
+        authority="Rise gives you independent access to multiple top carriers, so the plan fits you, not the other way around. We're a local team with direct points of contact, not a call center, and fast turnaround on quotes."
         resolution="A real person in your corner. Every time."
         photo={<Photo src="/photos/our-promise.jpg" alt="A member of the Rise Insurance Agency team" focusY={20} />}
         watermarkText="RISE"
@@ -147,6 +179,7 @@ export default function Home() {
       <PlanSection
         eyebrow="How It Works"
         headline="Three steps to actually feeling covered."
+        headlineSize="text-5xl sm:text-6xl"
         background={<PhotoPlaceholder label="[Full-bleed background photo needed]" />}
         steps={[
           {
@@ -182,6 +215,7 @@ export default function Home() {
       <OfferSection
         eyebrow="Not Ready For A Quote Yet?"
         headline="Avoid the 5 insurance mistakes that cost people thousands."
+        headlineSize="text-5xl sm:text-6xl"
         subhead="A free, no-pressure guide — for anyone who wants to get smarter about their coverage before they need it."
       />
     </>

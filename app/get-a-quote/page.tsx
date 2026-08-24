@@ -6,16 +6,16 @@ import { TextHighlight } from "@/components/ui/TextHighlight";
 export const metadata: Metadata = {
   title: "Get a Quote",
   description:
-    "Request a free, no-pressure insurance quote from Rise's local Lubbock and West Texas team. A real person follows up — not a call center.",
+    "Request a free, no-pressure insurance quote from Rise's local team. A real person follows up — not a call center.",
 };
 
 export default function GetAQuotePage() {
   return (
     <>
       <section className="bg-near-black text-white">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:px-8">
+        <div className="mx-auto max-w-4xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">Get a Quote</p>
-          <h1 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+          <h1 className="mt-4 font-display text-5xl font-bold leading-tight tracking-tight sm:text-6xl">
             Let&apos;s find the plan that <TextHighlight>actually</TextHighlight> fits.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/70">

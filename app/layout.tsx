@@ -21,11 +21,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rise Insurance Agency | Lubbock & West Texas",
+    default: "Rise Insurance Agency",
     template: "%s | Rise Insurance Agency",
   },
   description:
-    "Independent insurance for homeowners, families, and small businesses in Lubbock and West Texas. A real local team, not a call center.",
+    "Independent insurance for homeowners, families, and small businesses. A real local team, not a call center.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -22,9 +22,11 @@ export function TrustSidebar() {
         <Row
           label="Office"
           value={
-            siteConfig.address.line1 !== NEEDS_FROM_BRADEN
-              ? `${siteConfig.address.line1}, ${siteConfig.address.cityStateZip}`
-              : NEEDS_FROM_BRADEN
+            siteConfig.isCloudBased
+              ? "Cloud-Based Agency"
+              : siteConfig.address
+                ? `${siteConfig.address.line1}, ${siteConfig.address.cityStateZip}`
+                : NEEDS_FROM_BRADEN
           }
         />
         <Row label="Hours" value={siteConfig.hours} />

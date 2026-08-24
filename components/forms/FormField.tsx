@@ -42,6 +42,26 @@ export function TextAreaField({
   );
 }
 
+export function FileField({
+  label,
+  id,
+  required,
+  ...props
+}: LabelWrapProps & Omit<InputHTMLAttributes<HTMLInputElement>, "id" | "type">) {
+  return (
+    <div>
+      <LabelWrap label={label} id={id} required={required} />
+      <input
+        id={id}
+        type="file"
+        required={required}
+        className="w-full border-2 border-ink/15 bg-white text-sm text-ink/70 file:mr-4 file:border-0 file:bg-brand-blue file:px-4 file:py-3 file:text-sm file:font-semibold file:uppercase file:tracking-wide file:text-white hover:file:bg-brand-blue-dark"
+        {...props}
+      />
+    </div>
+  );
+}
+
 export function SelectField({
   label,
   id,

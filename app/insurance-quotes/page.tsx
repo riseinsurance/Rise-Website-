@@ -7,9 +7,9 @@ import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { Photo } from "@/components/ui/Photo";
 
 export const metadata: Metadata = {
-  title: "Insurance Quotes in Lubbock & West Texas",
+  title: "Insurance Quotes",
   description:
-    "Home, auto, renters, business, and life insurance quotes from a real local team in Lubbock and West Texas — independent access to top carriers, shopped for you.",
+    "Home, auto, renters, business, and life insurance quotes from a real local team with independent access to top carriers, shopped for you.",
 };
 
 function CarIcon() {
@@ -104,21 +104,21 @@ export default function InsuranceQuotesPage() {
             title: "Auto",
             description: "Liability, collision, and comprehensive coverage shopped across multiple carriers, not just the first quote.",
             icon: <CarIcon />,
-            photo: <Photo src="/photos/card-auto.jpg" alt="West Texas highway" />,
+            photo: <Photo src="/photos/card-auto.jpg" alt="A highway" />,
             href: "/insurance/auto",
           },
           {
             title: "Home",
             description: "Homeowners, condo, and landlord coverage built around what your property is actually worth.",
             icon: <HouseIcon />,
-            photo: <Photo src="/photos/card-home.jpg" alt="A West Texas home" focusX={70} />,
+            photo: <Photo src="/photos/card-home.jpg" alt="A home" focusX={70} />,
             href: "/insurance/home",
           },
           {
             title: "Business",
-            description: "General liability, property, and business-specific policies for West Texas small businesses.",
+            description: "General liability, property, and business-specific policies for small businesses.",
             icon: <BriefcaseIcon />,
-            photo: <Photo src="/photos/card-business.jpg" alt="A local West Texas storefront" />,
+            photo: <Photo src="/photos/card-business.jpg" alt="A local storefront" />,
             href: "/insurance/business",
           },
           {

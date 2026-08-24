@@ -3,18 +3,30 @@
 import { useState, type FormEvent } from "react";
 import { TextField, SelectField, TextAreaField } from "@/components/forms/FormField";
 
-// Submission endpoint not yet wired — see build brief Section 8: needs a
-// decision on backend (email forward vs. AgencyZoom webhook, etc.) before
-// this goes live. Form UI and validation are complete.
 export function QuoteForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("sending");
+
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
-  if (submitted) {
+  if (status === "sent") {
     return (
       <div className="border-2 border-brand-blue bg-white p-8">
         <p className="text-2xl font-black text-ink">Thanks — we&apos;ve got it.</p>
@@ -62,11 +74,17 @@ export function QuoteForm() {
         name="message"
         placeholder="Current carrier, renewal date, specific concerns — whatever's useful."
       />
+      {status === "error" && (
+        <p className="text-sm font-semibold text-red-600">
+          Something went wrong sending this. Please try again in a moment.
+        </p>
+      )}
       <button
         type="submit"
-        className="w-full bg-brand-blue px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-blue-dark"
+        disabled={status === "sending"}
+        className="w-full bg-brand-blue px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-blue-dark disabled:opacity-60"
       >
-        Request My Quote
+        {status === "sending" ? "Sending..." : "Request My Quote"}
       </button>
     </form>
   );

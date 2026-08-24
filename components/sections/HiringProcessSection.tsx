@@ -14,8 +14,8 @@ export function HiringProcessSection({
 }) {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-        <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+      <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+        <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
           {headline}
         </h2>
         {intro && (

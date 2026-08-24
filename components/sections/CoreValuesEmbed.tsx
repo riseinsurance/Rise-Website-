@@ -4,7 +4,8 @@ import { coreValues } from "@/lib/careers-content";
 // Featured on the recruitment pages so a visitor who reaches the
 // application form still has the agency's culture in front of them.
 // Pulls three of the five values already written for /careers verbatim
-// rather than restating them, plus a link back to the full section there.
+// rather than restating them, plus a link to the full list on
+// /our-core-values (not /careers#core-values, which only shows five).
 const FEATURED_TITLES = ["Integrity Above All", "Client Centered Service", "Lifelong Stewardship"];
 
 export function CoreValuesEmbed({ accentClassName = "text-brand-blue" }: { accentClassName?: string }) {
@@ -12,8 +13,8 @@ export function CoreValuesEmbed({ accentClassName = "text-brand-blue" }: { accen
 
   return (
     <section className="bg-light-gray">
-      <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-        <h2 className="text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+      <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+        <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
           Our Core Values
         </h2>
 
@@ -28,7 +29,7 @@ export function CoreValuesEmbed({ accentClassName = "text-brand-blue" }: { accen
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/careers#core-values" className={`font-bold hover:underline ${accentClassName}`}>
+          <Link href="/our-core-values" className={`font-bold hover:underline ${accentClassName}`}>
             See All Core Values &gt;
           </Link>
         </div>

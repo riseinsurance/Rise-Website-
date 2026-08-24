@@ -32,7 +32,7 @@ export function GuideSection({
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
           <p className="mt-6 text-xl leading-relaxed text-ink/80">{empathy}</p>
           <p className="mt-6 text-xl leading-relaxed text-ink/80">{authority}</p>
-          <p className="mt-8 font-display text-3xl font-semibold italic text-ink">{resolution}</p>
+          <p className="mt-8 font-display text-4xl font-semibold italic text-ink sm:text-5xl">{resolution}</p>
         </div>
 
         <div className={`aspect-[4/3] w-full overflow-hidden bg-brand-charcoal ${reverse ? "lg:order-1" : ""}`}>
