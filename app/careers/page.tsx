@@ -10,7 +10,7 @@ const caveat = Caveat({ subsets: ["latin"], weight: "600" });
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join the Rise Insurance Agency team — a values-based team building something that matters, not just hiring for a desk.",
+    "Join the Rise Insurance Agency team, a values-based team building something that matters, not just hiring for a desk.",
 };
 
 export default function CareersPage() {
@@ -105,7 +105,7 @@ export default function CareersPage() {
                 How We Care About Our People
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-ink/70">
-                We exist for those outside our company walls — those who need trusted advisors
+                We exist for those outside our company walls, those who need trusted advisors
                 in their corner. But we also deeply care about the people inside our walls and
                 their families. We offer personal, and developmental benefits and some that are
                 just flat out fun.
@@ -141,10 +141,10 @@ export default function CareersPage() {
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
             We firmly believe in having a fun, healthy culture where people actually enjoy
-            showing up — and we protect what we&apos;ve got. This is a place fueled by passion,
+            showing up, and we protect what we&apos;ve got. This is a place fueled by passion,
             grounded in dedication, and energized by people who care deeply. We celebrate big,
             support each other, and never tolerate drama or entitlement. Culture isn&apos;t a
-            side note here — it&apos;s what we build everything on.
+            side note here. It&apos;s what we build everything on.
           </p>
         </div>
       </section>

@@ -12,7 +12,7 @@ import { HiringProcessSection } from "@/components/sections/HiringProcessSection
 
 export const metadata: Metadata = {
   title: "Growth Team Member",
-  description: "Join Rise Insurance Agency's Growth Team — spark conversations, learn sales, and launch your career.",
+  description: "Join Rise Insurance Agency's Growth Team: spark conversations, learn sales, and launch your career.",
 };
 
 // This page intentionally breaks from the site's blue/near-black palette —
@@ -87,7 +87,7 @@ const faqs = [
   },
   {
     q: "Is this full-time?",
-    a: "We'll talk through scheduling and fit during the interview — this role can flex depending on the candidate.",
+    a: "We'll talk through scheduling and fit during the interview. This role can flex depending on the candidate.",
   },
   {
     q: "Where can this lead?",
@@ -118,7 +118,7 @@ export default function GrowthTeamPage() {
               </h1>
               <p className="mt-6 text-lg text-white/90">
                 Step into a role where you&apos;ll learn to build relationships, open doors, and
-                grow a real career in sales — no experience required.
+                grow a real career in sales, no experience required.
               </p>
               <a
                 href="#apply"
@@ -140,7 +140,7 @@ export default function GrowthTeamPage() {
             <ScrollHighlight>Launch your sales journey here.</ScrollHighlight>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
-            As our Growth Team Member, you&apos;ll be the spark that starts new relationships —
+            As our Growth Team Member, you&apos;ll be the spark that starts new relationships,
             reaching out, starting conversations, and learning the fundamentals of sales from a
             team that actually wants you to succeed. It&apos;s hands-on experience that turns into
             a real career, not just a paycheck.

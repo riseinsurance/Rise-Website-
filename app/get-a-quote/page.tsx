@@ -6,7 +6,7 @@ import { TextHighlight } from "@/components/ui/TextHighlight";
 export const metadata: Metadata = {
   title: "Get a Quote",
   description:
-    "Request a free, no-pressure insurance quote from Rise's local team. A real person follows up — not a call center.",
+    "Request a free, no-pressure insurance quote from Rise's local team. A real person follows up, not a call center.",
 };
 
 export default function GetAQuotePage() {
@@ -19,7 +19,7 @@ export default function GetAQuotePage() {
             Let&apos;s find the plan that <TextHighlight>actually</TextHighlight> fits.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/70">
-            Fill this out and a real person from Rise will follow up — no call center, no auto-dialer.
+            Fill this out and a real person from Rise will follow up: no call center, no auto-dialer.
           </p>
         </div>
       </section>

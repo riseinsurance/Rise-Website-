@@ -19,7 +19,7 @@ export function LeadMagnetForm() {
   if (status === "submitted") {
     return (
       <p className="text-lg font-semibold text-white">
-        Thanks — check your inbox for the guide shortly.
+        Thanks! Check your inbox for the guide shortly.
       </p>
     );
   }

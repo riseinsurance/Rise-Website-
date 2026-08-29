@@ -11,7 +11,7 @@ import { ReferralForm } from "@/components/forms/ReferralForm";
 export const metadata: Metadata = {
   title: "Referral Program for Realtors & Lenders",
   description:
-    "A referral partner for realtors, lenders, and local professionals — fast turnaround, direct communication, and clients who come out ahead.",
+    "A referral partner for realtors, lenders, and local professionals: fast turnaround, direct communication, and clients who come out ahead.",
 };
 
 function HandshakeIcon() {
@@ -122,7 +122,7 @@ export default function ReferralProgramPage() {
             .
           </>
         }
-        subhead="Every referral has your name on it. We treat it that way — fast turnaround, direct communication, and a client experience that reflects well on you."
+        subhead="Every referral has your name on it. We treat it that way: fast turnaround, direct communication, and a client experience that reflects well on you."
         primaryCta={{ label: "Refer a Client", href: "#refer" }}
         secondaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         frameForeground={<Photo src="/photos/referral-header.jpg" alt="Two members of the Rise Insurance Agency team" focusY={35} />}
@@ -218,7 +218,7 @@ export default function ReferralProgramPage() {
           {
             number: "01",
             title: "Send us your client",
-            description: "One short form — takes less than a minute.",
+            description: "One short form. Takes less than a minute.",
             icon: <HandshakeIcon />,
           },
           {

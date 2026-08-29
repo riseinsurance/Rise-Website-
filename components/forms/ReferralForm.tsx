@@ -15,7 +15,7 @@ export function ReferralForm() {
   if (submitted) {
     return (
       <div className="border-2 border-brand-blue bg-white p-8">
-        <p className="text-2xl font-black text-ink">Got it — thank you.</p>
+        <p className="text-2xl font-black text-ink">Got it, thank you.</p>
         <p className="mt-2 text-ink/70">
           We&apos;ll reach out to your client quickly and keep you posted along the way.
         </p>

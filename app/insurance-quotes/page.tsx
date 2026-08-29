@@ -150,7 +150,7 @@ export default function InsuranceQuotesPage() {
 
       <CtaBanner
         headline="Ready to see what you're paying for?"
-        subhead="A free, no-pressure quote — we'll tell you plainly if we can beat what you have."
+        subhead="A free, no-pressure quote. We'll tell you plainly if we can beat what you have."
         cta={{ label: "Get a Quote", href: "/get-a-quote" }}
       />
     </>

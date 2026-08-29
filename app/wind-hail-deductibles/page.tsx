@@ -29,7 +29,7 @@ export default function WindHailDeductiblesPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/70">
             You can&apos;t stop the storm, but you can control what it costs you. Most West Texas
-            homeowners don&apos;t realize their wind &amp; hail deductible is percentage-based —
+            homeowners don&apos;t realize their wind &amp; hail deductible is percentage-based,
             often thousands more out of pocket than they expect, on top of the damage itself.
           </p>
           <div className="mt-8 flex justify-center">
@@ -48,7 +48,7 @@ export default function WindHailDeductiblesPage() {
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
             Unlike a flat-dollar deductible, many Texas homeowners policies apply a
             <em className="not-italic font-semibold text-ink"> percentage-based </em>
-            deductible specifically for wind and hail damage — commonly 1% to 3% of your home&apos;s
+            deductible specifically for wind and hail damage, commonly 1% to 3% of your home&apos;s
             insured value. On a $300,000 home, a 2% wind &amp; hail deductible means the first
             $6,000 of storm damage comes out of your pocket before coverage kicks in.
           </p>

@@ -8,7 +8,7 @@ import { HiringProcessSection } from "@/components/sections/HiringProcessSection
 
 export const metadata: Metadata = {
   title: "Insurance Sales Agent",
-  description: "Join Rise Insurance Agency as a Sales Agent — build real client relationships and a business of your own.",
+  description: "Join Rise Insurance Agency as a Sales Agent and build real client relationships and a business of your own.",
 };
 
 function skillIcon(d: string) {
@@ -54,7 +54,7 @@ const responsibilities = [
   },
   {
     title: "Shop it right",
-    description: "Use independent carrier access to find plans that actually fit — not just what's easiest to sell.",
+    description: "Use independent carrier access to find plans that actually fit, not just what's easiest to sell.",
   },
   {
     title: "Grow your own book",
@@ -141,7 +141,7 @@ const faqs = [
   },
   {
     q: "Can I build my own book of business?",
-    a: "Yes — that's the whole point. The relationships and clients you build are yours to grow.",
+    a: "Yes, that's the whole point. The relationships and clients you build are yours to grow.",
   },
   {
     q: "Is prior insurance experience required?",
@@ -162,7 +162,7 @@ export default function AgentPage() {
               Earn trust. Change lives. Build a business of your own.
             </h1>
             <p className="mt-6 text-lg text-white/70">
-              Join Rise as a Sales Agent — build real client relationships, grow your income, and
+              Join Rise as a Sales Agent and build real client relationships, grow your income, and
               build a career with room to actually go somewhere.
             </p>
             <a
@@ -186,7 +186,7 @@ export default function AgentPage() {
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
             As a Sales Agent at Rise, you&apos;ll build your own book of business backed by
             independent access to top carriers and a team that actually has your back. This
-            isn&apos;t a call-center script — it&apos;s real relationships, real advice, and real
+            isn&apos;t a call-center script. It&apos;s real relationships, real advice, and real
             income potential.
           </p>
         </div>

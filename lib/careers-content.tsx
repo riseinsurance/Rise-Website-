@@ -235,7 +235,7 @@ export const benefits: Benefit[] = [
   },
   {
     title: "Team Lunches",
-    description: "We regularly share meals as a team — because good conversations (and great ideas) often happen over lunch.",
+    description: "We regularly share meals as a team, because good conversations (and great ideas) often happen over lunch.",
     icon: <ForkIcon />,
   },
   {

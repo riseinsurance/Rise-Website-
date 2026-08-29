@@ -29,7 +29,7 @@ export function QuoteForm() {
   if (status === "sent") {
     return (
       <div className="border-2 border-brand-blue bg-white p-8">
-        <p className="text-2xl font-black text-ink">Thanks — we&apos;ve got it.</p>
+        <p className="text-2xl font-black text-ink">Thanks! We&apos;ve got it.</p>
         <p className="mt-2 text-ink/70">
           A real person from Rise will reach out shortly to talk through your quote.
         </p>
@@ -72,7 +72,7 @@ export function QuoteForm() {
         label="Anything else we should know?"
         id="message"
         name="message"
-        placeholder="Current carrier, renewal date, specific concerns — whatever's useful."
+        placeholder="Current carrier, renewal date, specific concerns, or whatever's useful."
       />
       {status === "error" && (
         <p className="text-sm font-semibold text-red-600">

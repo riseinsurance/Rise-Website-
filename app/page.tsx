@@ -121,7 +121,7 @@ export default function Home() {
             <CircleHighlight className="text-brand-blue">simple</CircleHighlight>.
           </>
         }
-        subhead="Insurance doesn't have to be hard. We shop it, explain it, and stand behind it — with independent access to top carriers and a real local team, so you feel confident, covered, and in control."
+        subhead="Insurance doesn't have to be hard. We shop it, explain it, and stand behind it, with independent access to top carriers and a real local team, so you feel confident, covered, and in control."
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "How It Works", href: "/insurance-quotes" }}
         frameForeground={<Photo src="/photos/homepage-hero.jpg" alt="Rise Insurance Agency" />}
@@ -170,7 +170,7 @@ export default function Home() {
         cards={[
           {
             title: "Auto",
-            description: "Liability, collision, and comprehensive coverage shopped across multiple carriers — not just the first quote.",
+            description: "Liability, collision, and comprehensive coverage shopped across multiple carriers, not just the first quote.",
             icon: <CarIcon />,
             photo: <Photo src="/photos/card-auto.jpg" alt="A highway" />,
             href: "/insurance/auto",
@@ -241,7 +241,7 @@ export default function Home() {
         eyebrow="Not Ready For A Quote Yet?"
         headline="Avoid the 5 insurance mistakes that cost people thousands."
         headlineSize="text-5xl sm:text-6xl"
-        subhead="A free, no-pressure guide — for anyone who wants to get smarter about their coverage before they need it."
+        subhead="A free, no-pressure guide for anyone who wants to get smarter about their coverage before they need it."
       />
     </>
   );
