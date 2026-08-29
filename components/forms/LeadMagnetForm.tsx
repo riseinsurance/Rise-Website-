@@ -2,18 +2,26 @@
 
 import { useState, type FormEvent } from "react";
 
-// Submission endpoint not yet wired — build brief Section 8 requires
-// confirming the backend (email forward vs. AgencyZoom webhook, etc.)
-// before this goes live. UI is complete and ready to point at a real
-// endpoint once that's decided.
 export function LeadMagnetForm() {
-  const [status, setStatus] = useState<"idle" | "submitted">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "submitted" | "error">("idle");
   const [email, setEmail] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!email) return;
-    setStatus("submitted");
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/lead-magnet", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("submitted");
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "submitted") {
@@ -40,10 +48,16 @@ export function LeadMagnetForm() {
       />
       <button
         type="submit"
-        className="shrink-0 bg-brand-blue px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-blue-dark"
+        disabled={status === "sending"}
+        className="shrink-0 bg-brand-blue px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-blue-dark disabled:opacity-60"
       >
-        Send Me The Guide
+        {status === "sending" ? "Sending..." : "Send Me The Guide"}
       </button>
+      {status === "error" && (
+        <p className="text-sm font-semibold text-red-400 sm:basis-full">
+          Something went wrong sending the guide. Please try again in a moment.
+        </p>
+      )}
     </form>
   );
 }
