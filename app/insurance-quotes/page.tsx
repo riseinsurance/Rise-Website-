@@ -59,12 +59,11 @@ function HeartIcon() {
   );
 }
 
-function UmbrellaIcon() {
+function KeyIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
-      <path d="M12 3a9 9 0 0 1 9 9H3a9 9 0 0 1 9-9Z" />
-      <path d="M12 12v7a2 2 0 0 1-4 0" />
-      <path d="M12 3v1" />
+      <circle cx="8" cy="15" r="4" />
+      <path d="M11 12 20 3M16 8l3 3M19 5l2 2" />
     </svg>
   );
 }
@@ -138,9 +137,9 @@ export default function InsuranceQuotesPage() {
             linkLabel: "Get a Quote",
           },
           {
-            title: "Umbrella",
-            description: "Extra liability protection layered on top of your existing home and auto policies.",
-            icon: <UmbrellaIcon />,
+            title: "Landlord",
+            description: "Dwelling coverage and lost rental income protection for the property you rent out to tenants.",
+            icon: <KeyIcon />,
             photo: <PhotoPlaceholder label="[Photo]" />,
             href: "/get-a-quote",
             linkLabel: "Get a Quote",
