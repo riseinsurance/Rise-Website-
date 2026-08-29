@@ -9,21 +9,46 @@ import { Photo } from "@/components/ui/Photo";
 import { CircleHighlight } from "@/components/ui/CircleHighlight";
 import { Button } from "@/components/ui/Button";
 
+function VoicemailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+      <circle cx="6" cy="15" r="3" />
+      <circle cx="18" cy="15" r="3" />
+      <path d="M6 12h12" />
+    </svg>
+  );
+}
+
+function RenewalIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+      <path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
+      <path d="M9 12h6M9 16h6M9 8h3" />
+    </svg>
+  );
+}
+
+function ClaimIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+      <path d="M12 3 4 6v6c0 4.5 3.2 7.7 8 9 4.8-1.3 8-4.5 8-9V6l-8-3Z" />
+      <path d="m9.5 12 1.8 1.8L15 10" />
+    </svg>
+  );
+}
+
 const problems = [
   {
     text: "...called your agent and gotten voicemail, right when you actually needed them?",
-    photo: "/photos/home-problem-voicemail.jpg",
-    alt: "A woman on the phone, unable to reach her agent",
+    icon: <VoicemailIcon />,
   },
   {
     text: "...opened a renewal notice and had no idea why your premium jumped again?",
-    photo: "/photos/home-problem-renewal.jpg",
-    alt: "A woman reviewing a renewal notice at home",
+    icon: <RenewalIcon />,
   },
   {
     text: "...filed a claim and felt like you were fighting your own insurance company?",
-    photo: "/photos/home-problem-claim.jpg",
-    alt: "Storm damage cleanup and roof repair after a claim",
+    icon: <ClaimIcon />,
   },
 ];
 
@@ -112,21 +137,21 @@ export default function Home() {
             Have you ever...
           </h2>
 
-          <div className="scrollbar-hide -mx-6 mt-14 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0">
+          <div className="mt-14 grid gap-6 sm:grid-cols-3">
             {problems.map((p) => (
               <div
-                key={p.photo}
-                className="relative aspect-[3/4] w-[78%] shrink-0 snap-center overflow-hidden bg-brand-charcoal sm:w-auto sm:shrink"
+                key={p.text}
+                className="flex flex-col gap-6 border-2 border-ink/10 bg-near-black p-8 transition-colors duration-300 hover:border-brand-blue"
               >
-                <Photo src={p.photo} alt={p.alt} />
-                <div className="absolute inset-0 bg-gradient-to-t from-near-black/95 via-near-black/40 to-transparent" />
-                <p className="absolute inset-x-0 bottom-0 p-6 font-display text-xl font-medium italic leading-snug text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-brand-blue/30 bg-brand-blue/10 text-brand-blue">
+                  {p.icon}
+                </div>
+                <p className="font-display text-xl font-medium italic leading-snug text-white">
                   {p.text}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-3 text-xs text-ink/40 sm:hidden">Swipe to see more &rarr;</p>
 
           <div className="mt-6 flex flex-col items-start gap-6 bg-near-black px-8 py-10 sm:flex-row sm:items-center sm:justify-between">
             <p className="font-display text-2xl font-semibold text-white">You deserve better.</p>
