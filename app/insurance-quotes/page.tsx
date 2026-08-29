@@ -78,7 +78,7 @@ export default function InsuranceQuotesPage() {
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "See What We Cover", href: "#coverage" }}
         frameForeground={<PhotoPlaceholder label="[Interior hero photo needed]" />}
-        background={<PhotoPlaceholder label="[Full-bleed hero background photo needed]" />}
+        background={<Photo src="/photos/insurance-hero-background.jpg" alt="Aerial view of a West Texas neighborhood at sunset" />}
       />
 
       <ComparisonSection
