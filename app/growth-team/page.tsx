@@ -100,7 +100,7 @@ export default function GrowthTeamPage() {
     <>
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch lg:grid-cols-2">
-          <div className="relative order-2 overflow-hidden text-white lg:order-1">
+          <div className="relative overflow-hidden text-white">
             <div
               className="absolute inset-0"
               style={{
@@ -128,7 +128,7 @@ export default function GrowthTeamPage() {
               </a>
             </div>
           </div>
-          <div className="relative order-1 min-h-[320px] lg:order-2">
+          <div className="relative min-h-[320px]">
             <Photo src="/photos/growth-team.jpg" alt="A Rise Insurance Agency Growth Team member" />
           </div>
         </div>
