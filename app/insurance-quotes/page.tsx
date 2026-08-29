@@ -140,7 +140,7 @@ export default function InsuranceQuotesPage() {
             title: "Landlord",
             description: "Dwelling coverage and lost rental income protection for the property you rent out to tenants.",
             icon: <KeyIcon />,
-            photo: <PhotoPlaceholder label="[Photo]" />,
+            photo: <Photo src="/photos/card-landlord.jpg" alt="A single-family rental home" />,
             href: "/get-a-quote",
             linkLabel: "Get a Quote",
           },
