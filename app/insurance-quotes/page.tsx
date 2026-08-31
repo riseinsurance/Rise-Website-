@@ -3,7 +3,6 @@ import { Hero } from "@/components/sections/Hero";
 import { ComparisonSection } from "@/components/sections/ComparisonSection";
 import { ProductCards } from "@/components/sections/ProductCards";
 import { CtaBanner } from "@/components/sections/CtaBanner";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { Photo } from "@/components/ui/Photo";
 
 export const metadata: Metadata = {
@@ -77,7 +76,7 @@ export default function InsuranceQuotesPage() {
         subhead="Home, auto, renters, business, life. Independent access to top carriers, and a plan built around your specific risk instead of a generic template."
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "See What We Cover", href: "#coverage" }}
-        frameForeground={<PhotoPlaceholder label="[Interior hero photo needed]" />}
+        frameForeground={<Photo src="/photos/products-hero-interior.jpg" alt="A Rise Insurance Agency team member on the phone with a client" focusY={20} />}
         background={<Photo src="/photos/insurance-hero-background.jpg" alt="Aerial view of a West Texas neighborhood at sunset" />}
       />
 
