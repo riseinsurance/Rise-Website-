@@ -21,36 +21,42 @@ function MarqueeTrack({ ariaHidden }: { ariaHidden?: boolean }) {
 
 export function AboutHero() {
   return (
-    <section className="bg-near-black text-white">
-      {/* Beat one: pure brand moment, no copy. */}
-      <div className="relative flex min-h-[70vh] items-center justify-center overflow-hidden lg:min-h-screen">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 flex items-center overflow-hidden"
-        >
+    <>
+      {/* Beat one: pure brand moment, no copy. Logo sits low rather than
+          centered, huge enough to bleed toward the section edge. */}
+      <section className="bg-brand-blue">
+        <div className="relative flex min-h-[70vh] items-end justify-center overflow-hidden pb-6 sm:pb-10 lg:min-h-screen">
           <div
-            className="flex w-max animate-marquee-slow whitespace-nowrap font-display font-extrabold uppercase leading-none text-white/[0.07]"
-            style={{ fontSize: "clamp(3.5rem, 13vw, 11rem)" }}
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 flex items-center overflow-hidden"
           >
-            <MarqueeTrack />
-            <MarqueeTrack ariaHidden />
+            <div
+              className="flex w-max animate-marquee-slow whitespace-nowrap font-display font-extrabold uppercase leading-none text-ink/[0.1]"
+              style={{ fontSize: "clamp(3.5rem, 13vw, 11rem)" }}
+            >
+              <MarqueeTrack />
+              <MarqueeTrack ariaHidden />
+            </div>
+          </div>
+
+          <div className="relative">
+            <Logo variant="white" height={280} className="h-auto w-[min(88vw,900px)]" />
           </div>
         </div>
+      </section>
 
-        <div className="relative">
-          <Logo variant="blue" height={110} className="h-auto w-[min(70vw,420px)]" />
+      {/* Beat two: the message. Dark section reads as a deliberate
+          separator band below the blue hero. */}
+      <section className="bg-near-black text-white">
+        <div className="relative mx-auto max-w-3xl px-6 py-20 text-center sm:py-24 lg:px-8">
+          <h1 className="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            We work for <span className="text-brand-blue">you</span>. Not the insurance companies.
+          </h1>
+          <p className="mt-6 text-lg text-white/70">
+            That&apos;s not a tagline. It&apos;s the only reason Rise exists.
+          </p>
         </div>
-      </div>
-
-      {/* Beat two: the message. */}
-      <div className="relative mx-auto max-w-3xl px-6 py-20 text-center sm:py-24 lg:px-8">
-        <h1 className="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          We work for <span className="text-brand-blue">you</span>. Not the insurance companies.
-        </h1>
-        <p className="mt-6 text-lg text-white/70">
-          That&apos;s not a tagline. It&apos;s the only reason Rise exists.
-        </p>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
