@@ -125,8 +125,8 @@ export default function ReferralProgramPage() {
         subhead="Every referral has your name on it. We treat it that way: fast turnaround, direct communication, and a client experience that reflects well on you."
         primaryCta={{ label: "Refer a Client", href: "#refer" }}
         secondaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
-        frameForeground={<Photo src="/photos/referral-header.jpg" alt="Two members of the Rise Insurance Agency team" />}
-        frameClassName="order-1 aspect-[1378/2000] w-full lg:order-2 lg:-mr-6"
+        frameForeground={<Photo src="/photos/referral-header.jpg" alt="Two members of the Rise Insurance Agency team" focusY={35} />}
+        frameClassName="order-1 aspect-[2/1] w-full lg:order-2 lg:-mr-6"
       />
 
       <section className="bg-light-gray">
