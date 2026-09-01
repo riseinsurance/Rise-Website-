@@ -15,6 +15,10 @@ type HeroProps = {
   showCarrierMarquee?: boolean;
   /** Solid near-black (homepage) vs. full-bleed photo w/ overlay (interior pages) */
   background?: "solid" | ReactNode;
+  /** Overrides the frame's sizing/aspect-ratio classes for a photo that
+   *  doesn't fit the default 16:9/4:3 crop (e.g. a portrait shot where the
+   *  whole body needs to stay in frame). Defaults to the standard box. */
+  frameClassName?: string;
 };
 
 export function Hero({
@@ -26,6 +30,7 @@ export function Hero({
   frameForeground,
   showCarrierMarquee = false,
   background = "solid",
+  frameClassName = "order-1 aspect-[16/9] w-full sm:aspect-[4/3] lg:order-2 lg:-mr-6",
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-near-black text-white">
@@ -55,10 +60,7 @@ export function Hero({
           </div>
         </div>
 
-        <OffsetFrame
-          className="order-1 aspect-[16/9] w-full sm:aspect-[4/3] lg:order-2 lg:-mr-6"
-          foreground={frameForeground}
-        />
+        <OffsetFrame className={frameClassName} foreground={frameForeground} />
       </div>
 
       {showCarrierMarquee && <LogoMarquee logos={carrierLogos} className="relative" />}
