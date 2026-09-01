@@ -229,13 +229,8 @@ export default function Home() {
       />
 
       <StatsCounterSection
-        title={
-          <>
-            The Rise <br className="sm:hidden" />
-            Impact
-          </>
-        }
-        titleSize="text-[clamp(2.5rem,15vw,4rem)] sm:text-6xl"
+        title="The Rise Impact"
+        titleSize="text-[clamp(1.85rem,calc(11.5vw_-_0.5rem),3.25rem)] sm:text-6xl"
       />
 
       <OfferSection
