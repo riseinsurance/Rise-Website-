@@ -1,12 +1,15 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
-// A highlighter-marker sweep that stays hidden until the visitor starts
-// scrolling the page, then animates in — unlike CircleHighlight/
+// A highlighter-marker sweep that stays hidden until this specific instance
+// scrolls into view, then animates in — unlike CircleHighlight/
 // UnderlineHighlight, which draw in immediately on page load and would
 // already be finished (and unseen) by the time someone scrolls down to
-// a headline further down the page.
+// a headline further down the page. Each instance watches its own
+// IntersectionObserver rather than a single page-wide scroll listener, so
+// a phrase further down the page doesn't fire the moment the visitor
+// starts scrolling past the hero, before it's actually on screen.
 export function ScrollHighlight({
   children,
   className = "",
@@ -17,15 +20,27 @@ export function ScrollHighlight({
   markClassName?: string;
 }) {
   const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => setVisible(true);
-    window.addEventListener("scroll", handleScroll, { once: true, passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.6 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <span className="relative inline-block px-1 py-0.5">
+    <span ref={ref} className="relative inline-block px-1 py-0.5">
       <span
         aria-hidden="true"
         className={`absolute inset-0 z-0 ${markClassName} transition-[width] duration-700 ease-out`}

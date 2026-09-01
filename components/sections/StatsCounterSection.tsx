@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { UnderlineHighlight } from "@/components/ui/UnderlineHighlight";
+import { ScrollHighlight } from "@/components/ui/ScrollHighlight";
 
 type CounterProps = {
   target: number;
@@ -56,12 +58,14 @@ function Counter({ target, decimals = 0, prefix = "", suffix = "", label }: Coun
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-display text-5xl font-black text-brand-blue sm:text-6xl">
-        {prefix}
-        {value.toFixed(decimals)}
-        {suffix}
+      <div className="font-display text-7xl font-black text-brand-blue sm:text-8xl lg:text-9xl">
+        <UnderlineHighlight strokeColor="#1e1e1e">
+          {prefix}
+          {value.toFixed(decimals)}
+          {suffix}
+        </UnderlineHighlight>
       </div>
-      <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-ink/60">{label}</p>
+      <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-ink/60">{label}</p>
     </div>
   );
 }
@@ -74,12 +78,16 @@ export function StatsCounterSection() {
           The Numbers
         </p>
 
-        <div className="mt-10 grid grid-cols-2 gap-8">
+        <div className="mt-14 grid grid-cols-2 gap-8">
           <Counter target={1.1} decimals={1} prefix="$" suffix="M+" label="Premium placed" />
           <Counter target={300} suffix="+" label="Clients served" />
         </div>
 
-        <p className="mt-8 text-center text-ink/60">In under 8 months.</p>
+        <p className="mt-12 text-center text-lg text-ink/60">
+          <ScrollHighlight markClassName="bg-brand-blue" className="text-ink">
+            In under 8 months.
+          </ScrollHighlight>
+        </p>
       </div>
     </section>
   );

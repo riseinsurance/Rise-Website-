@@ -25,7 +25,7 @@ export function AboutHero() {
       {/* Beat one: pure brand moment, no copy. Logo sits low rather than
           centered, huge enough to bleed toward the section edge. */}
       <section className="bg-brand-blue">
-        <div className="relative flex min-h-[70vh] items-end justify-center overflow-hidden pb-6 sm:pb-10 lg:min-h-screen">
+        <div className="relative flex min-h-[55vh] items-end justify-center overflow-hidden pb-6 sm:pb-10 lg:min-h-[75vh]">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 flex items-center overflow-hidden"
