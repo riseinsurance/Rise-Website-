@@ -126,7 +126,7 @@ export default function ReferralProgramPage() {
         primaryCta={{ label: "Refer a Client", href: "#refer" }}
         secondaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         frameForeground={<Photo src="/photos/referral-header.jpg" alt="Two members of the Rise Insurance Agency team" focusY={35} />}
-        frameClassName="order-1 aspect-[2/1] w-full lg:order-2 lg:-mr-6"
+        frameClassName="order-1 aspect-[20/13] w-full sm:aspect-[4/3] lg:order-2 lg:-mr-6"
       />
 
       <section className="bg-light-gray">
