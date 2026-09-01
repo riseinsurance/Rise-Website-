@@ -72,8 +72,10 @@ export function StatsCounterSection() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-4xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
-        <p className="text-center font-display text-4xl font-bold uppercase tracking-wide text-brand-blue sm:text-5xl">
-          <UnderlineHighlight strokeColor="#1e1e1e">The Numbers</UnderlineHighlight>
+        <p className="text-center font-display text-5xl font-bold uppercase tracking-wide text-brand-blue sm:text-6xl">
+          <UnderlineHighlight strokeColor="#1e1e1e" animateOnScroll>
+            The Numbers
+          </UnderlineHighlight>
         </p>
 
         <div className="mt-16 grid grid-cols-2 gap-8">
