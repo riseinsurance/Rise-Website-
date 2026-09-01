@@ -10,15 +10,46 @@ export const NEEDS_FROM_BRADEN = "[NEEDS FROM BRADEN]" as const;
 
 export type MaybeContent = string | typeof NEEDS_FROM_BRADEN;
 
-export const nav = [
+// Header nav: a mix of plain links and hover/tap dropdowns that group
+// related pages (Header.tsx and MobileNav.tsx both read this so desktop
+// hover-dropdowns and the mobile accordion never drift apart).
+export type NavItem =
+  | { type: "link"; label: string; href: string }
+  | { type: "dropdown"; label: string; items: { label: string; href: string }[] };
+
+export const navGroups: NavItem[] = [
+  { type: "link", label: "Home", href: "/" },
+  {
+    type: "dropdown",
+    label: "Insurance",
+    items: [
+      { label: "Overview", href: "/insurance-quotes" },
+      { label: "Wind & Hail Deductibles", href: "/wind-hail-deductibles" },
+    ],
+  },
+  {
+    type: "dropdown",
+    label: "About",
+    items: [
+      { label: "Our Story", href: "/about" },
+      { label: "Our Team", href: "/team" },
+    ],
+  },
+  { type: "link", label: "Referral Program", href: "/referral-program" },
+  { type: "link", label: "Careers", href: "/careers" },
+] as const;
+
+// The footer stays a flat, complete sitemap even though the header now
+// curates its nav into dropdowns, so every page is listed individually here.
+export const footerNav = [
   { label: "Home", href: "/" },
+  { label: "Insurance", href: "/insurance-quotes" },
+  { label: "Wind & Hail Deductibles", href: "/wind-hail-deductibles" },
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
-  { label: "Get a Quote", href: "/get-a-quote" },
-  { label: "Products", href: "/insurance-quotes" },
-  { label: "Wind & Hail Deductibles", href: "/wind-hail-deductibles" },
   { label: "Referral Program", href: "/referral-program" },
   { label: "Careers", href: "/careers" },
+  { label: "Get a Quote", href: "/get-a-quote" },
 ] as const;
 
 export const siteConfig = {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, siteConfig, NEEDS_FROM_BRADEN } from "@/lib/site-config";
+import { footerNav, siteConfig, NEEDS_FROM_BRADEN } from "@/lib/site-config";
 import { Watermark } from "@/components/ui/Watermark";
 import { Logo } from "@/components/ui/Logo";
 
@@ -31,7 +31,7 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wide text-white/50">Menu</h3>
             <ul className="mt-4 space-y-3">
-              {nav.map((item) => (
+              {footerNav.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm text-white/80 hover:text-brand-blue">
                     {item.label}

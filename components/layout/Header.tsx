@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { nav, siteConfig, NEEDS_FROM_BRADEN } from "@/lib/site-config";
+import { navGroups, siteConfig, NEEDS_FROM_BRADEN } from "@/lib/site-config";
 import { NavLink } from "./NavLink";
+import { NavDropdown } from "./NavDropdown";
 import { MobileNav } from "./MobileNav";
 import { Logo } from "@/components/ui/Logo";
+import { Button } from "@/components/ui/Button";
 
 export function Header() {
   const hasPhone = siteConfig.phone !== NEEDS_FROM_BRADEN;
@@ -15,25 +17,32 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
-          {nav.map((item) => (
-            <NavLink key={item.href} href={item.href} label={item.label} />
-          ))}
+          {navGroups.map((item) =>
+            item.type === "dropdown" ? (
+              <NavDropdown key={item.label} label={item.label} items={item.items} />
+            ) : (
+              <NavLink key={item.href} href={item.href} label={item.label} />
+            )
+          )}
         </nav>
 
-        {hasPhone ? (
-          <a
-            href={
-              siteConfig.phoneHref !== NEEDS_FROM_BRADEN ? siteConfig.phoneHref : undefined
-            }
-            className="hidden shrink-0 bg-near-black px-5 py-3 font-display text-sm font-semibold text-white transition-colors hover:bg-black lg:inline-flex"
-          >
-            {siteConfig.phone}
-          </a>
-        ) : (
-          <span className="hidden shrink-0 bg-near-black/10 px-5 py-3 text-xs font-semibold text-ink/50 lg:inline-flex">
-            [Phone number needed]
-          </span>
-        )}
+        <div className="hidden shrink-0 items-center gap-4 lg:flex">
+          <Button href="/get-a-quote" variant="primary">
+            Get a Quote
+          </Button>
+          {hasPhone ? (
+            <a
+              href={siteConfig.phoneHref !== NEEDS_FROM_BRADEN ? siteConfig.phoneHref : undefined}
+              className="whitespace-nowrap font-display text-sm font-semibold text-ink transition-colors hover:text-brand-blue"
+            >
+              {siteConfig.phone}
+            </a>
+          ) : (
+            <span className="whitespace-nowrap text-xs font-semibold text-ink/50">
+              [Phone number needed]
+            </span>
+          )}
+        </div>
 
         <MobileNav />
       </div>
