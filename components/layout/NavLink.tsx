@@ -10,7 +10,7 @@ export function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className={`font-display text-sm font-semibold uppercase tracking-wide transition-colors hover:text-brand-blue ${
+      className={`whitespace-nowrap font-display text-sm font-semibold uppercase tracking-wide transition-colors hover:text-brand-blue ${
         isActive ? "text-brand-blue underline underline-offset-8" : "text-ink"
       }`}
     >

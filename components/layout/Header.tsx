@@ -14,7 +14,7 @@ export function Header() {
           <Logo variant="blue" height={30} />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {nav.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
           ))}

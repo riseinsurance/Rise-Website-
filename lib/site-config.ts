@@ -13,6 +13,7 @@ export type MaybeContent = string | typeof NEEDS_FROM_BRADEN;
 export const nav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Team", href: "/team" },
   { label: "Get a Quote", href: "/get-a-quote" },
   { label: "Products", href: "/insurance-quotes" },
   { label: "Wind & Hail Deductibles", href: "/wind-hail-deductibles" },
