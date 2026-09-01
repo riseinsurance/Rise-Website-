@@ -25,7 +25,7 @@ export function AboutHero() {
       {/* Beat one: pure brand moment, no copy. Logo sits low rather than
           centered, huge enough to bleed toward the section edge. */}
       <section className="bg-brand-blue">
-        <div className="relative flex min-h-[55vh] items-end justify-center overflow-hidden pb-6 sm:pb-10 lg:min-h-[75vh]">
+        <div className="relative flex min-h-[42vh] items-end justify-center overflow-hidden pb-6 sm:min-h-[50vh] sm:pb-10 lg:min-h-[75vh]">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 flex items-center overflow-hidden"
@@ -39,7 +39,7 @@ export function AboutHero() {
             </div>
           </div>
 
-          <div className="relative -translate-y-[20%]">
+          <div className="relative -translate-y-[9vh] sm:-translate-y-[7vh] lg:-translate-y-[5vh]">
             <Logo variant="white" height={280} className="h-auto w-[min(88vw,900px)]" />
           </div>
         </div>
