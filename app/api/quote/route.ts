@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { resend, escapeHtml } from "@/lib/email";
+import { resend, escapeHtml, TEAM_RECIPIENTS } from "@/lib/email";
 
 // AgencyZoom forwarding is intentionally not wired up yet — their webhook
 // doesn't publicly document its expected payload format, and it's tied to a
@@ -8,13 +8,6 @@ import { resend, escapeHtml } from "@/lib/email";
 // than surfacing an error. Add the forward here once the field spec is
 // confirmed (AgencyZoom support or the webhook setup page). The URL is
 // already stored at process.env.AGENCYZOOM_WEBHOOK_URL.
-
-const QUOTE_RECIPIENTS = [
-  "braden@riseinsuranceagency.com",
-  "journey@riseinsuranceagency.com",
-  "gary@riseinsuranceagency.com",
-  "brad@riseinsuranceagency.com",
-];
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -34,7 +27,7 @@ export async function POST(request: Request) {
 
   const { error } = await resend.emails.send({
     from: "Rise Insurance Agency <notifications@riseinsuranceagency.com>",
-    to: QUOTE_RECIPIENTS,
+    to: TEAM_RECIPIENTS,
     replyTo: email,
     subject: `New quote request: ${firstName} ${lastName} (${insuranceType})`,
     html: `

@@ -3,13 +3,6 @@ import path from "path";
 import { NextResponse } from "next/server";
 import { resend, escapeHtml } from "@/lib/email";
 
-const NOTIFY_RECIPIENTS = [
-  "braden@riseinsuranceagency.com",
-  "journey@riseinsuranceagency.com",
-  "gary@riseinsuranceagency.com",
-  "brad@riseinsuranceagency.com",
-];
-
 const GUIDE_PATH = path.join(process.cwd(), "public/guides/5-insurance-mistakes.pdf");
 
 export async function POST(request: Request) {
@@ -40,7 +33,7 @@ export async function POST(request: Request) {
 
   const { error: notifyError } = await resend.emails.send({
     from: "Rise Insurance Agency <notifications@riseinsuranceagency.com>",
-    to: NOTIFY_RECIPIENTS,
+    to: "service@riseinsuranceagency.com",
     replyTo: email,
     subject: `New guide download: ${email}`,
     html: `<p><strong>Email:</strong> ${escapeHtml(email)}</p><p>Downloaded the "5 Insurance Mistakes" guide.</p>`,
