@@ -7,6 +7,11 @@ import { Logo } from "@/components/ui/Logo";
 // supported viewport at this font size.
 const REPEAT_COUNT = 10;
 
+// Shared with the logo's overlap shift below, so "cover 20% of the text"
+// stays exactly true at any viewport width instead of approximating it
+// with a fixed vh value that only happens to work at one screen size.
+const MARQUEE_FONT_SIZE = "clamp(3.5rem, 13vw, 11rem)";
+
 function MarqueeTrack({ ariaHidden }: { ariaHidden?: boolean }) {
   return (
     <div className="flex shrink-0" aria-hidden={ariaHidden}>
@@ -25,21 +30,30 @@ export function AboutHero() {
       {/* Beat one: pure brand moment, no copy. Logo sits low rather than
           centered, huge enough to bleed toward the section edge. */}
       <section className="bg-brand-blue">
-        <div className="relative flex min-h-[75vh] items-end justify-center overflow-hidden pb-10">
+        <div className="flex min-h-[75vh] flex-col items-center justify-center overflow-hidden py-10">
+          {/* Fixed to the marquee's own font-size, not the section's, so
+              the logo below (positioned via a negative margin relative to
+              this same height) covers exactly 20% of the text band at any
+              viewport width, mobile included, instead of a gap/overlap
+              that happened to only work out at one screen size. */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 flex items-center overflow-hidden"
+            className="w-full overflow-hidden"
+            style={{ height: MARQUEE_FONT_SIZE }}
           >
             <div
               className="flex w-max animate-marquee-slow whitespace-nowrap font-display font-extrabold uppercase leading-none text-ink/[0.1]"
-              style={{ fontSize: "clamp(3.5rem, 13vw, 11rem)" }}
+              style={{ fontSize: MARQUEE_FONT_SIZE }}
             >
               <MarqueeTrack />
               <MarqueeTrack ariaHidden />
             </div>
           </div>
 
-          <div className="relative -translate-y-[5vh]">
+          <div
+            className="relative"
+            style={{ marginTop: `calc(${MARQUEE_FONT_SIZE} * -0.2)` }}
+          >
             <Logo variant="white" height={280} className="h-auto w-[min(88vw,900px)]" />
           </div>
         </div>

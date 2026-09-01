@@ -76,9 +76,9 @@ export default function InsuranceQuotesPage() {
         subhead="Home, auto, renters, business, life. Independent access to top carriers, and a plan built around your specific risk instead of a generic template."
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "See What We Cover", href: "#coverage" }}
-        frameForeground={<Photo src="/photos/products-hero-interior.jpg" alt="A Rise Insurance Agency team member on the phone with a client" />}
+        frameForeground={<Photo src="/photos/products-hero-interior.jpg" alt="A Rise Insurance Agency team member on the phone with a client" focusY={45} />}
         background={<Photo src="/photos/insurance-hero-background.jpg" alt="Aerial view of a West Texas neighborhood at sunset" />}
-        frameClassName="order-1 aspect-[2/3] w-full lg:order-2 lg:-mr-6"
+        frameClassName="order-1 aspect-[8/9] w-full lg:order-2 lg:-mr-6"
       />
 
       <ComparisonSection
