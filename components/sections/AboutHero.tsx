@@ -30,7 +30,7 @@ export function AboutHero() {
       {/* Beat one: pure brand moment, no copy. Logo sits low rather than
           centered, huge enough to bleed toward the section edge. */}
       <section className="bg-brand-blue">
-        <div className="flex min-h-[75vh] flex-col items-center justify-center overflow-hidden py-10">
+        <div className="flex min-h-[64vh] flex-col items-center justify-center overflow-hidden py-10">
           {/* Fixed to the marquee's own font-size, not the section's, so
               the logo below (positioned via a negative margin relative to
               this same height) covers exactly 20% of the text band at any
@@ -54,7 +54,7 @@ export function AboutHero() {
             className="relative"
             style={{ marginTop: `calc(${MARQUEE_FONT_SIZE} * -0.2)` }}
           >
-            <Logo variant="white" height={280} className="h-auto w-[min(88vw,900px)]" />
+            <Logo variant="white" height={320} className="h-auto w-[min(92vw,1050px)]" />
           </div>
         </div>
       </section>
