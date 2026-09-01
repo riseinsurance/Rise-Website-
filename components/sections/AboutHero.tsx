@@ -52,7 +52,7 @@ export function AboutHero() {
 
           <div
             className="relative"
-            style={{ marginTop: `calc(${MARQUEE_FONT_SIZE} * -0.2)` }}
+            style={{ marginTop: `calc(${MARQUEE_FONT_SIZE} * -0.35)` }}
           >
             <Logo variant="white" height={320} className="h-auto w-[min(92vw,1050px)]" />
           </div>
