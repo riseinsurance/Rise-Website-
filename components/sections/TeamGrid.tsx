@@ -7,6 +7,11 @@ type TeamMember = {
   photoSrc?: string;
 };
 
+type TeamSection = {
+  title: string;
+  members: TeamMember[];
+};
+
 // Falls back to a colored circle with the person's first initial instead of
 // a broken image or bracket placeholder when a photo hasn't been supplied
 // yet, so the grid still looks intentional and finished card by card.
@@ -33,16 +38,34 @@ function TeamCard({ member }: { member: TeamMember }) {
   );
 }
 
+// A lone member (Leadership) centers as a single narrow card instead of
+// stretching to the width of a 3-up row; a pair (Agents, Business
+// Development) centers as a pair instead of leaving an empty third slot.
+function TeamSectionBlock({ title, members }: TeamSection) {
+  const gridClass = members.length === 1 ? "max-w-xs grid-cols-1" : "max-w-2xl grid-cols-1 sm:grid-cols-2";
+
+  return (
+    <div className="mt-16 first:mt-0">
+      <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink sm:text-3xl">{title}</h2>
+      <div className={`mx-auto mt-8 grid gap-8 ${gridClass}`}>
+        {members.map((member) => (
+          <TeamCard key={member.name} member={member} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function TeamGrid({
   eyebrow,
   headline,
   subhead,
-  members,
+  sections,
 }: {
   eyebrow: string;
   headline: string;
   subhead: string;
-  members: TeamMember[];
+  sections: TeamSection[];
 }) {
   return (
     <section className="bg-white">
@@ -53,11 +76,9 @@ export function TeamGrid({
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg text-ink/70">{subhead}</p>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {members.map((member) => (
-            <TeamCard key={member.name} member={member} />
-          ))}
-        </div>
+        {sections.map((section) => (
+          <TeamSectionBlock key={section.title} title={section.title} members={section.members} />
+        ))}
       </div>
     </section>
   );
