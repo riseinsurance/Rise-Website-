@@ -30,7 +30,7 @@ export default function CareersPage() {
           <div className="absolute inset-0 bg-near-black/60" />
         </div>
 
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-20 text-center sm:py-32 lg:px-8">
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 pb-20 pt-20 text-center sm:pb-32 sm:pt-80 lg:px-8">
           <p className={`${caveat.className} text-4xl text-brand-blue sm:text-5xl`}>
             we get excited
           </p>
