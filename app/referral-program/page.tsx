@@ -115,7 +115,7 @@ export default function ReferralProgramPage() {
             <br />
             We&apos;ll make you{" "}
             <em className="not-italic">
-              <UnderlineHighlight className="font-display italic text-brand-blue">
+              <UnderlineHighlight className="font-display italic text-brand-blue" animateOnScroll>
                 look good
               </UnderlineHighlight>
             </em>
