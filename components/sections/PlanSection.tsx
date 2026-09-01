@@ -11,11 +11,9 @@ type PlanSectionProps = {
   eyebrow: string;
   headline: string;
   steps: Step[];
-  background: ReactNode;
+  background?: ReactNode;
   headlineSize?: string;
 };
-
-const stagger = ["lg:translate-y-0", "lg:translate-y-10", "lg:translate-y-0"];
 
 export function PlanSection({
   eyebrow,
@@ -26,10 +24,12 @@ export function PlanSection({
 }: PlanSectionProps) {
   return (
     <section className="relative overflow-hidden bg-near-black text-white">
-      <div className="absolute inset-0">
-        {background}
-        <div className="absolute inset-0 bg-near-black/80" />
-      </div>
+      {background && (
+        <div className="absolute inset-0">
+          {background}
+          <div className="absolute inset-0 bg-near-black/80" />
+        </div>
+      )}
 
       <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
@@ -38,8 +38,8 @@ export function PlanSection({
         </h2>
 
         <div className="mt-20 grid grid-cols-1 gap-12 sm:grid-cols-3">
-          {steps.map((step, i) => (
-            <div key={step.number} className={stagger[i % stagger.length]}>
+          {steps.map((step) => (
+            <div key={step.number}>
               <div className="flex items-end gap-4">
                 <span className="font-display text-6xl font-bold leading-none text-white/15">
                   {step.number}

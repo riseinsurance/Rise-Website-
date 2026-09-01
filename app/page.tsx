@@ -4,7 +4,6 @@ import { GuideSection } from "@/components/sections/GuideSection";
 import { PlanSection } from "@/components/sections/PlanSection";
 import { StatsCounterSection } from "@/components/sections/StatsCounterSection";
 import { OfferSection } from "@/components/sections/OfferSection";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { Photo } from "@/components/ui/Photo";
 import { CircleHighlight } from "@/components/ui/CircleHighlight";
 import { Button } from "@/components/ui/Button";
@@ -205,7 +204,6 @@ export default function Home() {
         eyebrow="How It Works"
         headline="Three steps to actually feeling covered."
         headlineSize="text-5xl sm:text-6xl"
-        background={<PhotoPlaceholder label="[Full-bleed background photo needed]" />}
         steps={[
           {
             number: "01",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { BenefitGrid } from "@/components/sections/BenefitGrid";
 import { PlanSection } from "@/components/sections/PlanSection";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { Photo } from "@/components/ui/Photo";
 import { UnderlineHighlight } from "@/components/ui/UnderlineHighlight";
 import { Button } from "@/components/ui/Button";
@@ -214,7 +213,6 @@ export default function ReferralProgramPage() {
       <PlanSection
         eyebrow="How It Works"
         headline="Three steps, and you're kept in the loop the whole way."
-        background={<PhotoPlaceholder label="[Full-bleed background photo needed]" />}
         steps={[
           {
             number: "01",
