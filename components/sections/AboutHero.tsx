@@ -39,7 +39,7 @@ export function AboutHero() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative -translate-y-[20%]">
             <Logo variant="white" height={280} className="h-auto w-[min(88vw,900px)]" />
           </div>
         </div>

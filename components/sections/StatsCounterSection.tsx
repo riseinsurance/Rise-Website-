@@ -58,14 +58,12 @@ function Counter({ target, decimals = 0, prefix = "", suffix = "", label }: Coun
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-display text-7xl font-black text-brand-blue sm:text-8xl lg:text-9xl">
-        <UnderlineHighlight strokeColor="#1e1e1e">
-          {prefix}
-          {value.toFixed(decimals)}
-          {suffix}
-        </UnderlineHighlight>
+      <div className="font-display text-5xl font-black text-brand-blue sm:text-6xl">
+        {prefix}
+        {value.toFixed(decimals)}
+        {suffix}
       </div>
-      <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-ink/60">{label}</p>
+      <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-ink/60">{label}</p>
     </div>
   );
 }
@@ -74,11 +72,11 @@ export function StatsCounterSection() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-4xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
-        <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">
-          The Numbers
+        <p className="text-center font-display text-4xl font-bold uppercase tracking-wide text-brand-blue sm:text-5xl">
+          <UnderlineHighlight strokeColor="#1e1e1e">The Numbers</UnderlineHighlight>
         </p>
 
-        <div className="mt-14 grid grid-cols-2 gap-8">
+        <div className="mt-16 grid grid-cols-2 gap-8">
           <Counter target={1.1} decimals={1} prefix="$" suffix="M+" label="Premium placed" />
           <Counter target={300} suffix="+" label="Clients served" />
         </div>
