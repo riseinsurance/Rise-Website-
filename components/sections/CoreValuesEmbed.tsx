@@ -8,14 +8,22 @@ import { coreValues } from "@/lib/careers-content";
 // /our-core-values (not /careers#core-values, which only shows five).
 const FEATURED_TITLES = ["Integrity Above All", "Client Centered Service", "Lifelong Stewardship"];
 
-export function CoreValuesEmbed({ accentClassName = "text-brand-blue" }: { accentClassName?: string }) {
+export function CoreValuesEmbed({
+  accentClassName = "text-brand-blue",
+  heading = "Our Core Values",
+  href = "/our-core-values",
+}: {
+  accentClassName?: string;
+  heading?: string;
+  href?: string;
+}) {
   const featured = FEATURED_TITLES.map((title) => coreValues.find((v) => v.title === title)!);
 
   return (
     <section className="bg-light-gray">
       <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
         <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
-          Our Core Values
+          {heading}
         </h2>
 
         <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-3">
@@ -29,7 +37,7 @@ export function CoreValuesEmbed({ accentClassName = "text-brand-blue" }: { accen
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/our-core-values" className={`font-bold hover:underline ${accentClassName}`}>
+          <Link href={href} className={`font-bold hover:underline ${accentClassName}`}>
             See All Core Values &gt;
           </Link>
         </div>

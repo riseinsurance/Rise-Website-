@@ -45,6 +45,20 @@ body {
   }
 }
 
+/* Same translateX(0) -> translateX(-50%) loop as .animate-marquee, but
+   much slower, for large full-width text tracks (About hero background)
+   where the 32s duration tuned for the narrow carrier-logo strip would
+   read as scrolling too fast. */
+.animate-marquee-slow {
+  animation: marquee 90s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-slow {
+    animation: none;
+  }
+}
+
 /* Hand-drawn circle that draws itself in around a highlighted headline
    word (CircleHighlight component). pathLength=1 on the SVG path lets this
    stay in the 0–1 range instead of computing real pixel path length. */
