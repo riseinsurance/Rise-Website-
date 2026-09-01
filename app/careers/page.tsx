@@ -3,6 +3,9 @@ import { Caveat } from "next/font/google";
 import Link from "next/link";
 import { Photo } from "@/components/ui/Photo";
 import { OffsetFrame } from "@/components/ui/OffsetFrame";
+import { Watermark } from "@/components/ui/Watermark";
+import { ScrollHighlight } from "@/components/ui/ScrollHighlight";
+import { UnderlineHighlight } from "@/components/ui/UnderlineHighlight";
 import { coreValues, benefits } from "@/lib/careers-content";
 
 const caveat = Caveat({ subsets: ["latin"], weight: "600" });
@@ -54,13 +57,15 @@ export default function CareersPage() {
 
       <section className="bg-light-gray">
         <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
-          <h2 className="font-display text-5xl font-semibold italic tracking-tight text-ink">
+          <h2 className="font-display text-5xl font-semibold italic tracking-tight text-brand-blue">
             Work That Matters
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
-            We don&apos;t sell insurance; we serve people. Our team shows up every day with
-            integrity, grit, and a passion for helping others. We chase excellence, challenge
-            the norm, and never settle for average.
+            We don&apos;t sell insurance; we serve people. Our team shows up every day with{" "}
+            <ScrollHighlight markClassName="bg-brand-blue/25" className="text-ink font-semibold">
+              integrity, grit, and a passion for helping others
+            </ScrollHighlight>
+            . We chase excellence, challenge the norm, and never settle for average.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-ink/70">
             If you&apos;re hungry to grow, wired to serve, and ready to make a difference,
@@ -69,25 +74,35 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section id="core-values" className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
-          <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-ink">
+      <section id="core-values" className="relative overflow-hidden bg-brand-blue">
+        <Watermark
+          text="VALUES"
+          className="-bottom-[0.25em] left-1/2 -translate-x-1/2 text-ink/[0.08]"
+        />
+
+        <div className="relative mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20 lg:px-8">
+          <h2 className="text-center font-display text-5xl font-semibold tracking-tight text-white">
             Core Values
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 bg-brand-blue" />
+          <div className="mx-auto mt-3 h-1 w-16 bg-near-black" />
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {coreValues.slice(0, 5).map((value) => (
-              <div key={value.title} className="border border-ink/10 bg-white p-6 text-center shadow-sm">
-                <div className="mx-auto flex justify-center text-brand-blue">{value.icon}</div>
-                <p className="mt-4 font-bold text-ink">{value.title}</p>
+              <div
+                key={value.title}
+                className="bg-white p-6 text-center shadow-lg transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-brand-blue/30 bg-brand-blue/10 text-brand-blue">
+                  {value.icon}
+                </div>
+                <p className="font-bold text-ink">{value.title}</p>
                 <p className="mt-2 text-sm text-ink/60">{value.description}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-8 text-center">
-            <Link href="/our-core-values" className="font-bold text-brand-blue hover:underline">
+            <Link href="/our-core-values" className="font-bold text-white hover:text-near-black">
               See All Core Values &gt;
             </Link>
           </div>
@@ -120,7 +135,9 @@ export default function CareersPage() {
           <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="flex items-start gap-4">
-                <div className="text-brand-blue">{benefit.icon}</div>
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-brand-blue/30 bg-brand-blue/10 text-brand-blue">
+                  {benefit.icon}
+                </div>
                 <div>
                   <p className="font-bold text-ink">{benefit.title}</p>
                   <p className="mt-1 text-ink/60">{benefit.description}</p>
@@ -131,8 +148,13 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
+      <section className="relative overflow-hidden bg-white">
+        <Watermark
+          text="RISE"
+          className="-bottom-[0.25em] left-1/2 -translate-x-1/2 text-black/[0.04]"
+        />
+
+        <div className="relative mx-auto max-w-3xl px-6 py-14 sm:py-16 lg:py-20 text-center lg:px-8">
           <span className="inline-block bg-brand-blue px-4 py-1.5 text-sm font-bold text-white">
             Culture
           </span>
@@ -143,8 +165,11 @@ export default function CareersPage() {
             We firmly believe in having a fun, healthy culture where people actually enjoy
             showing up, and we protect what we&apos;ve got. This is a place fueled by passion,
             grounded in dedication, and energized by people who care deeply. We celebrate big,
-            support each other, and never tolerate drama or entitlement. Culture isn&apos;t a
-            side note here. It&apos;s what we build everything on.
+            support each other, and never tolerate drama or entitlement.{" "}
+            <UnderlineHighlight strokeColor="#00aeef" animateOnScroll className="text-ink">
+              Culture isn&apos;t a side note here.
+            </UnderlineHighlight>{" "}
+            It&apos;s what we build everything on.
           </p>
         </div>
       </section>
