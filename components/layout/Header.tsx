@@ -16,7 +16,7 @@ export function Header() {
           <Logo variant="blue" height={30} />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-6 xl:flex">
           {navGroups.map((item) =>
             item.type === "dropdown" ? (
               <NavDropdown key={item.label} label={item.label} items={item.items} />
@@ -26,7 +26,7 @@ export function Header() {
           )}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-4 lg:flex">
+        <div className="hidden shrink-0 items-center gap-4 xl:flex">
           <Button href="/get-a-quote" variant="primary">
             Get a Quote
           </Button>
