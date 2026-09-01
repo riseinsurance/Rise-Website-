@@ -135,7 +135,7 @@ export default function ReferralProgramPage() {
             Sound Familiar?
           </p>
           <h2 className="mt-4 max-w-2xl font-display text-5xl font-semibold leading-tight tracking-tight text-ink sm:text-6xl">
-            <UnderlineHighlight className="text-ink">Your name</UnderlineHighlight> is on every
+            Your name is on every
             referral you send.
           </h2>
 
