@@ -14,7 +14,7 @@ export function Footer() {
 
       <Watermark
         text="RISE"
-        className="-bottom-16 left-1/2 -translate-x-1/2 text-white/[0.04]"
+        className="-bottom-[0.25em] left-1/2 -translate-x-1/2 text-white/[0.04]"
       />
 
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8">
