@@ -70,7 +70,9 @@ export function TeamGrid({
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-6xl px-6 py-16 text-center sm:py-20 lg:py-24 lg:px-8">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-blue">{eyebrow}</p>
+        <p className="font-display text-3xl font-bold uppercase tracking-wide text-brand-blue sm:text-4xl">
+          {eyebrow}
+        </p>
         <h1 className="mt-4 font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl">
           {headline}
         </h1>
