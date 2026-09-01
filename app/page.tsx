@@ -228,7 +228,7 @@ export default function Home() {
         ]}
       />
 
-      <StatsCounterSection title="The Rise Impact" />
+      <StatsCounterSection title="The Rise Impact" titleSize="text-[clamp(1.75rem,9.5vw,3rem)] sm:text-6xl" />
 
       <OfferSection
         eyebrow="Not Ready For A Quote Yet?"

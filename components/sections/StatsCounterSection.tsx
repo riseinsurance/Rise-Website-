@@ -68,11 +68,22 @@ function Counter({ target, decimals = 0, prefix = "", suffix = "", label }: Coun
   );
 }
 
-export function StatsCounterSection({ title = "The Numbers" }: { title?: string }) {
+export function StatsCounterSection({
+  title = "The Numbers",
+  // "The Rise Impact" is longer than the "The Numbers" default this was
+  // designed around, so a fixed text-5xl was overflowing/clipping on
+  // narrow phones (whitespace-nowrap in UnderlineHighlight prevents it
+  // from wrapping). Callers with a longer title can pass a fluid
+  // clamp() size here instead of touching the shared default.
+  titleSize = "text-5xl sm:text-6xl",
+}: {
+  title?: string;
+  titleSize?: string;
+}) {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-4xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
-        <p className="text-center font-display text-5xl font-bold uppercase tracking-wide text-brand-blue sm:text-6xl">
+        <p className={`text-center font-display font-bold uppercase tracking-wide text-brand-blue ${titleSize}`}>
           <UnderlineHighlight strokeColor="#1e1e1e" animateOnScroll>
             {title}
           </UnderlineHighlight>
