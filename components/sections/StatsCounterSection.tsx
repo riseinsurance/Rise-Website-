@@ -68,13 +68,13 @@ function Counter({ target, decimals = 0, prefix = "", suffix = "", label }: Coun
   );
 }
 
-export function StatsCounterSection() {
+export function StatsCounterSection({ title = "The Numbers" }: { title?: string }) {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-4xl px-6 py-16 sm:py-20 lg:py-24 lg:px-8">
         <p className="text-center font-display text-5xl font-bold uppercase tracking-wide text-brand-blue sm:text-6xl">
           <UnderlineHighlight strokeColor="#1e1e1e" animateOnScroll>
-            The Numbers
+            {title}
           </UnderlineHighlight>
         </p>
 

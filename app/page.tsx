@@ -2,7 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { ProductCards } from "@/components/sections/ProductCards";
 import { GuideSection } from "@/components/sections/GuideSection";
 import { PlanSection } from "@/components/sections/PlanSection";
-import { StatsSection } from "@/components/sections/StatsSection";
+import { StatsCounterSection } from "@/components/sections/StatsCounterSection";
 import { OfferSection } from "@/components/sections/OfferSection";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { Photo } from "@/components/ui/Photo";
@@ -228,14 +228,7 @@ export default function Home() {
         ]}
       />
 
-      <StatsSection
-        eyebrow="Why It Matters"
-        stats={[
-          { stat: "86%", caption: "of homeowners misjudge their coverage.", source: null },
-          { stat: "1 in 3", caption: "drivers on the road are underinsured.", source: null },
-          { stat: "50%+", caption: "of homeowners misunderstand a key policy term.", source: null },
-        ]}
-      />
+      <StatsCounterSection title="The Rise Impact" />
 
       <OfferSection
         eyebrow="Not Ready For A Quote Yet?"
