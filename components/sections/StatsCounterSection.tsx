@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { UnderlineHighlight } from "@/components/ui/UnderlineHighlight";
 import { ScrollHighlight } from "@/components/ui/ScrollHighlight";
 
@@ -17,7 +17,7 @@ type CounterProps = {
 // scrolling the stat in and out of view again doesn't replay it. Setting
 // the value to the exact `target` on the final frame (rather than trusting
 // the eased formula's last computed step) keeps the landed number exact,
-// no floating-point drift off $1.1M+ / 300+.
+// no floating-point drift off the target.
 function Counter({ target, decimals = 0, prefix = "", suffix = "", label }: CounterProps) {
   const [value, setValue] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -60,7 +60,7 @@ function Counter({ target, decimals = 0, prefix = "", suffix = "", label }: Coun
     <div ref={ref} className="text-center">
       <div className="font-display text-5xl font-black text-brand-blue sm:text-6xl">
         {prefix}
-        {value.toFixed(decimals)}
+        {value.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}
         {suffix}
       </div>
       <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-ink/60">{label}</p>
@@ -77,7 +77,7 @@ export function StatsCounterSection({
   // clamp() size here instead of touching the shared default.
   titleSize = "text-5xl sm:text-6xl",
 }: {
-  title?: string;
+  title?: ReactNode;
   titleSize?: string;
 }) {
   return (
@@ -89,8 +89,8 @@ export function StatsCounterSection({
           </UnderlineHighlight>
         </p>
 
-        <div className="mt-16 grid grid-cols-2 gap-8">
-          <Counter target={1.1} decimals={1} prefix="$" suffix="M+" label="Premium placed" />
+        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <Counter target={1119000} prefix="$" suffix="+" label="Premium placed" />
           <Counter target={300} suffix="+" label="Clients served" />
         </div>
 
