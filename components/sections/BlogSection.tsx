@@ -13,40 +13,7 @@ async function getRecentPosts() {
   return client.fetch<PostSummary[]>(recentPostsQuery, {}, { next: { revalidate: 60 } });
 }
 
-// The one dramatic beat on the section: a full-bleed image with the story
-// laid directly over it, rather than another boxed card. Everything else in
-// the section stays quiet so this is the only thing competing for attention.
-function FeaturedStory({ post }: { post: PostSummary }) {
-  return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="group relative mt-16 block aspect-[4/5] overflow-hidden bg-brand-charcoal sm:aspect-[21/9]"
-    >
-      <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-        {post.mainImage ? (
-          <Photo src={urlForImage(post.mainImage).width(1920).height(1080).fit("crop").url()} alt={post.title} />
-        ) : (
-          <PhotoPlaceholder label={post.title} />
-        )}
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-near-black via-near-black/10 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-12">
-        <span className="inline-flex w-fit items-center bg-brand-blue px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-          {post.category}
-        </span>
-        <p className="mt-4 max-w-2xl font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-          {post.title}
-        </p>
-        <p className="mt-3 hidden max-w-xl text-white/70 sm:block">{post.excerpt}</p>
-        <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-white/50">
-          {formatPostDate(post.date)} &bull; {post.readTime}
-        </p>
-      </div>
-    </Link>
-  );
-}
-
-function SecondaryCard({ post }: { post: PostSummary }) {
+function BlogCard({ post }: { post: PostSummary }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -82,8 +49,6 @@ export async function BlogSection() {
     return null;
   }
 
-  const [featured, ...rest] = posts;
-
   return (
     <section className="bg-near-black text-white">
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:px-8 lg:py-28">
@@ -98,15 +63,14 @@ export async function BlogSection() {
           </p>
         </div>
 
-        {featured && <FeaturedStory post={featured} />}
-
-        {rest.length > 0 && (
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            {rest.map((post) => (
-              <SecondaryCard key={post._id} post={post} />
-            ))}
-          </div>
-        )}
+        <div className="scrollbar-hide mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2">
+          {posts.map((post) => (
+            <div key={post._id} className="w-[78%] shrink-0 snap-center sm:w-80">
+              <BlogCard post={post} />
+            </div>
+          ))}
+        </div>
+        {posts.length > 1 && <p className="mt-3 text-xs text-white/40">Scroll to see more &rarr;</p>}
 
         <div className="mt-14 text-center">
           <Button href="/blog" variant="primary">

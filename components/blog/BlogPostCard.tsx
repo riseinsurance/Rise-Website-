@@ -12,41 +12,23 @@ function CardImage({ post }: { post: PostSummary }) {
   return <Photo src={urlForImage(post.mainImage).width(1200).height(900).fit("crop").url()} alt={post.title} />;
 }
 
-export function BlogPostCard({
-  post,
-  featured = false,
-}: {
-  post: PostSummary;
-  featured?: boolean;
-}) {
+export function BlogPostCard({ post }: { post: PostSummary }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className={`group block border-2 border-ink/10 bg-white transition-all duration-300 ease-out hover:-translate-y-2 hover:border-brand-blue hover:shadow-xl ${
-        featured ? "sm:grid sm:grid-cols-2 sm:items-stretch" : ""
-      }`}
+      className="group block border-2 border-ink/10 bg-white transition-all duration-300 ease-out hover:-translate-y-2 hover:border-brand-blue hover:shadow-xl"
     >
-      <div
-        className={`relative overflow-hidden bg-brand-charcoal ${
-          featured ? "aspect-[16/10] sm:aspect-auto" : "aspect-[4/3]"
-        }`}
-      >
+      <div className="relative aspect-[4/3] overflow-hidden bg-brand-charcoal">
         <div className="h-full w-full transition-transform duration-300 ease-out group-hover:scale-110">
           <CardImage post={post} />
         </div>
       </div>
-      <div className={`flex flex-col ${featured ? "justify-center p-8 sm:p-10" : "p-6"}`}>
+      <div className="flex flex-col p-6">
         <span className="inline-flex w-fit items-center bg-brand-blue/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-blue">
           {post.category}
         </span>
-        <p
-          className={`mt-3 font-display font-semibold leading-snug text-ink ${
-            featured ? "text-3xl sm:text-4xl" : "text-xl"
-          }`}
-        >
-          {post.title}
-        </p>
-        <p className={`mt-2 text-ink/60 ${featured ? "text-base" : "text-sm"}`}>{post.excerpt}</p>
+        <p className="mt-3 font-display text-xl font-semibold leading-snug text-ink">{post.title}</p>
+        <p className="mt-2 text-sm text-ink/60">{post.excerpt}</p>
         <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/40">
           {formatPostDate(post.date)} &bull; {post.readTime}
         </p>

@@ -16,7 +16,6 @@ async function getPosts() {
 
 export default async function BlogPage() {
   const posts = await getPosts();
-  const [featured, ...rest] = posts;
 
   return (
     <section className="bg-white">
@@ -31,23 +30,20 @@ export default async function BlogPage() {
         </p>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
-        {featured && (
-          <div className="mb-14">
-            <BlogPostCard post={featured} featured />
-          </div>
-        )}
-
-        {rest.length > 0 && (
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((post) => (
-              <BlogPostCard key={post._id} post={post} />
-            ))}
-          </div>
-        )}
-
-        {posts.length === 0 && (
-          <p className="text-center text-ink/50">New posts are on the way. Check back soon.</p>
+      <div className="mx-auto max-w-7xl py-16 sm:py-20 lg:py-24">
+        {posts.length > 0 ? (
+          <>
+            <div className="scrollbar-hide flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-2 lg:px-8">
+              {posts.map((post) => (
+                <div key={post._id} className="w-[78%] shrink-0 snap-center sm:w-[22rem]">
+                  <BlogPostCard post={post} />
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 px-6 text-xs text-ink/40 lg:px-8">Scroll to see more &rarr;</p>
+          </>
+        ) : (
+          <p className="px-6 text-center text-ink/50 lg:px-8">New posts are on the way. Check back soon.</p>
         )}
       </div>
     </section>
