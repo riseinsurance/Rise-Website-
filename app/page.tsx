@@ -3,6 +3,7 @@ import { ProductCards } from "@/components/sections/ProductCards";
 import { GuideSection } from "@/components/sections/GuideSection";
 import { PlanSection } from "@/components/sections/PlanSection";
 import { StatsCounterSection } from "@/components/sections/StatsCounterSection";
+import { BlogSection } from "@/components/sections/BlogSection";
 import { OfferSection } from "@/components/sections/OfferSection";
 import { Photo } from "@/components/ui/Photo";
 import { CircleHighlight } from "@/components/ui/CircleHighlight";
@@ -230,6 +231,8 @@ export default function Home() {
         title="The Rise Impact"
         titleSize="text-[clamp(1.85rem,calc(11.5vw_-_0.5rem),3.25rem)] sm:text-6xl"
       />
+
+      <BlogSection />
 
       <OfferSection
         eyebrow="Not Ready For A Quote Yet?"

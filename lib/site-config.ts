@@ -35,6 +35,7 @@ export const navGroups: NavItem[] = [
       { label: "Our Team", href: "/team" },
     ],
   },
+  { type: "link", label: "Blog", href: "/blog" },
   { type: "link", label: "Referral Program", href: "/referral-program" },
   { type: "link", label: "Careers", href: "/careers" },
 ] as const;
@@ -47,6 +48,7 @@ export const footerNav = [
   { label: "Wind & Hail Deductibles", href: "/wind-hail-deductibles" },
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
+  { label: "Blog", href: "/blog" },
   { label: "Referral Program", href: "/referral-program" },
   { label: "Careers", href: "/careers" },
   { label: "Get a Quote", href: "/get-a-quote" },
